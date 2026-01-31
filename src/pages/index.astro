@@ -1,17 +1,118 @@
 ---
+import Layout from "../Layout/Layout.astro";
+import HeroHome from "../Components/HeroHome.astro";
+/* import TextMarquee from "../Components/TextMarquee.astro";
+import GalleryText from "../Components/GalleryText.astro";
+import ImageMarquee from "../components/ImageMarquee.astro";
+import Faqs from "../components/Faqs.astro";
+import StepsTimeline from "../components/StepsTimeline.astro";
+import Plans from "../components/Plans.astro";
+import Statements from "../components/Statements.astro"; */
+import Introducing from "../Components/Introducing.astro";
+import GL from "../Components/GL.astro";
+import GLPlaces from "../Components/GlPlaces.astro";
+import Button from "../Components/Button.astro";
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+<Layout title="Home">
+	<div class="sy-hero-home">
+		<div class="bg"/ >
+		<div class="u-container conatiner">
+			<div class="inner Hero">
+				<div class="content">
+					<h1 class="u-heading title" data-sy-reveal="words">Hi!</h1>
+					<p class="u-heading subtitle" data-sy-reveal="lines">Hopefully this works now.</p>
+				</div>
+				<div class="content">
+					<h1 class="u-heading title" data-sy-reveal="lines">uh oh</h1>
+				</div>
+			</div>
+		</div>
+		<div class="u-container conatiner">
+			<div class="inner">
+				<div class="content">
+					<h2 class="u-text">?</h2>
+				</div>
+				<div class="content">
+					<Button title="About!" color="primary" size="large" url="/About">About</Button>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.bg {
+		&:before,
+		&:after {
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		&:before {
+			background: linear-gradient(
+				45deg,
+				rgb(245, 169, 184),
+				rgb(91,206,250),
+
+			);
+			background-position: center;
+		}
+
+		&:after {
+			backdrop-filter: blur(2px);
+		}
+	}
+	.sy-hero-home {
+		position: relative;
+		overflow: hidden;
+	}
+	.marquee {
+		padding: 2rem 0;
+		z-index: 9;
+	}
+	.inner {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		padding: 9rem 0 10rem;
+		position: relative;
+		z-index: 1;
+		min-height: 100vh;
+		text-align: center;
+
+		 .Hero {
+			align-items: center;
+			align-content: center;
+			flex-direction: column;
+		}
+
+		@media (--mq-tablet) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+
+	.title {
+		--fs: 4.5rem;
+		--lh: 1;
+		max-width: 5.7em;
+
+		@media (--mq-phone) {
+			--fs: 3.5rem;
+		}
+	}
+
+	.subtitle {
+		--fs: var(--font-size-lg);
+		max-width: 25em;
+		margin-top: 1.5rem;
+	}
+</style>
