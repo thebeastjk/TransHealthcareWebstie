@@ -4,5 +4,51 @@ import Layout from "../Layout/Layout.astro"
 
 
 <Layout title="About">
+    <div class="bg" />
+    <div class="u-container">
+        <div class="Column-personal">
+            <div class="Profile">
+                <img src="../assets/Astra.jpg" class="Profile Photo" alt="Astra Photo" fetchpriority="high"/>
+                <h1 class="Name">Astra Knapp</h1>
 
+            </div>
+            <div class="Profile">
+                <img src="../assets/Charli.jpg" class="Profile Photo" alt="Chali Photo" fetchpriority="high"/>
+                <h1 class="Name">Charli Huang</h1>
+
+            </div>
+        </div>
+    </div>
 </Layout>
+
+<style>
+    .Column-personal {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 9rem 0 10rem;
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+    }
+    .Name {
+        max-width: 5.7em;
+        line-height: 1;
+        font-size: 2rem;
+        //text-transform: uppercase;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+    }
+    .Profile {
+        padding-left: 50px;
+        padding-right: 50px;
+        align-items: center;
+    }
+    .Profile-Photo {
+        height: 200px;
+        width: 200px;
+        z-index: 10;
+    }
+</style>

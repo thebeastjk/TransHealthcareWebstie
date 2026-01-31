@@ -1,6 +1,7 @@
 ---
 import Logo from "../assets/logo.svg"
 import type { Link } from "../types"
+import {black} from "yoctocolors";
 
 interface Props {
     logoUrl: string;
@@ -32,7 +33,7 @@ const { logoUrl, logoAlt, links } = Astro.props;
                         }
                     </ul>
                 </div>
-                <p class="cp">© {new Date().getFullYear()} {logoAlt}</p>
+                <p class="cp" >© {new Date().getFullYear()} {logoAlt}</p>
             </div>
         </div>
     </footer>
@@ -41,12 +42,16 @@ const { logoUrl, logoAlt, links } = Astro.props;
 
 
 <style>
+    .cp {
+        color: black;
+    }
     sy-footer {
         @extend %u-text;
 
         --fs: var(--font-size-sm);
         display: block;
         clip-path: inset(0);
+        border-radius: 100px;
 
         :global(&.has-no-anim footer) {
             position: static;
@@ -54,11 +59,12 @@ const { logoUrl, logoAlt, links } = Astro.props;
     }
 
     footer {
-        background: #1f2023;
+        background: var(--rgb-brand-3);
         color: rgba(255, 255, 255, 0.8);
         position: fixed;
         bottom: 0;
         width: 100%;
+        border-radius: 100px;
     }
 
     .inner {
@@ -72,6 +78,7 @@ const { logoUrl, logoAlt, links } = Astro.props;
         svg {
             width: 4.8rem;
             height: 1.5rem;
+            color: black;
 
             :global(path) {
                 fill: currentcolor;
@@ -91,6 +98,7 @@ const { logoUrl, logoAlt, links } = Astro.props;
             justify-content: center;
 
             a {
+                color: black;
                 text-decoration: none;
                 position: relative;
 

@@ -85,3 +85,27 @@ a {
 button {
     color: currentcolor;
 }
+
+.bg {
+    &:before,
+    &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &:before {
+        background: linear-gradient(
+                180deg,
+                rgb(245, 169, 184),
+                rgb(91, 206, 250)
+        ) center;
+    }
+
+    &:after {
+        backdrop-filter: blur(2px);
+    }
+}

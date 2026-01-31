@@ -8,12 +8,14 @@ import "../styles/global.css"
 
 const { title } = Astro.props
 const t = useTranslations();
+import type { Link } from "../types";
 
 const links = [
-    { title: 'Home', href: '/' },
-    { title: 'About', href: '/about' },
-    { title: 'Contact', href: '/contact' },
+    { title: 'Home', url: '/' },
+    { title: 'About', url: '/About' },
+    { title: 'Contact', url: '/contact' },
 ];
+
 ---
 
 
@@ -31,12 +33,12 @@ const links = [
             logoUrl="/"
             logoAlt=""
             links={links}
-            link1={{title: "Login", url:"#"}}
-            link2={{ title: "Get Started", url: "#" }}/>
+            link1={{title: "Welcome", url:"/"}}
+            link2={{ title: "Put something here", url: "/About" }}/>
         <main id="main">
             <slot/>
         </main>
-        <Footer logoUrl="/" logoAlt="Tran" links={links}/>
+        <Footer logoUrl="/" logoAlt="Astra Knapp" links={links}/>
         <SmoothScroll />
     </body>
 </html>

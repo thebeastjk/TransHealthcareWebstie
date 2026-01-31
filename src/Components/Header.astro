@@ -20,7 +20,7 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
         <div class="inner u-container">
             <div class="wrapper">
                 <a class="logo" href={logoUrl}>
-                    <Logo />
+                    <Logo width="100" height="100"/>
                     <span class="u-src-only">{logoAlt}</span>
                 </a>
 
@@ -147,6 +147,8 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
         right: 0;
         margin: 0 auto;
         width: min-content;
+        cursor: pointer;
+        z-index: 20;
 
         @media (--mq-tablet) {
             align-items: center;
@@ -154,7 +156,6 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
             width: 100vw;
             height: 100vh;
             position: fixed;
-            z-index: 2;
             background: var(--color-brand-3);
             top: 0;
             left: 0;
@@ -381,8 +382,8 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
     const heroSelectors = ["sy-hero-home"];
 
     class Header extends HTMLElement {
-        smallThreshold = 100;
-        hiddenThreshold = 200;
+        smallThreshold = 200;
+        hiddenThreshold = 100;
         toggleEl = this.querySelector(".toggle")!;
         hero = document.querySelector(heroSelectors.join(","));
         prevY = -1;
@@ -396,7 +397,6 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
 
             // addResizeObserver(this);
 
-            this.onResize();
             this.onScroll(window.scrollY);
         }
 
@@ -425,13 +425,6 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
             document.body.classList.toggle("is-nav-opened");
         };
 
-        onResize() {
-            const hero = this.hero;
-            const bcr = this.getBoundingClientRect();
-            const heroBcr = hero && hero.getBoundingClientRect();
-
-            this.smallThreshold = heroBcr ? heroBcr.height - bcr.height : bcr.height;
-        }
     }
 
     customElements.define("sy-head", Header);
