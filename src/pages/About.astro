@@ -13,8 +13,8 @@ import { Image } from "astro:assets"
             <div class="Profile">
                 <Image src={AstraPic} class="Profile-Photo" alt="Astra Photo" fetchpriority="high"/>
                 <h1 class="Name" data-sy-reveal="words">Knapp</h1>
-                <p class="Profile-Bio" data-sy-reveal="lines">The bio would go here!
-                And would continue here! Wait how far does this go? I'm not really sure.</p>
+                <p class="Profile-Bio" data-sy-reveal="lines">A student at Junipero Serra High School, in their senior year. </p>
+
             </div>
             <div class="Profile">
                 <Image src={CharliPic} class="Profile-Photo" alt="Chali Photo" fetchpriority="high"/>
@@ -39,6 +39,9 @@ import { Image } from "astro:assets"
         z-index: 1;
         min-height: 100vh;
         text-align: center;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+
     }
     .Name {
         max-width: 10em;
@@ -67,6 +70,7 @@ import { Image } from "astro:assets"
         font-size: 1rem;
         font-weight: normal;
         text-align: center;
+        max-width: 400px;
         //text-align-last: justify;
     }
 </style>
