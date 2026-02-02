@@ -1,6 +1,6 @@
 ---
 import Button from "./Button.astro";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/tflag.svg";
 import type { Link } from "../types";
 
 interface Props {
@@ -149,6 +149,7 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
         width: min-content;
         cursor: pointer;
         z-index: 20;
+        overflow: hidden;
 
         @media (--mq-tablet) {
             align-items: center;
