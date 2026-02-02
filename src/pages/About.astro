@@ -1,5 +1,8 @@
 ---
 import Layout from "../Layout/Layout.astro"
+import AstraPic from "../assets/Astra.jpg"
+import CharliPic from "../assets/Charli.jpg"
+import { Image } from "astro:assets"
 ---
 
 
@@ -8,13 +11,16 @@ import Layout from "../Layout/Layout.astro"
     <div class="u-container">
         <div class="Column-personal">
             <div class="Profile">
-                <img src="../assets/Astra.jpg" class="Profile Photo" alt="Astra Photo" fetchpriority="high"/>
-                <h1 class="Name">Astra Knapp</h1>
-
+                <Image src={AstraPic} class="Profile-Photo" alt="Astra Photo" fetchpriority="high"/>
+                <h1 class="Name" data-sy-reveal="words">Knapp</h1>
+                <p class="Profile-Bio" data-sy-reveal="lines">The bio would go here!
+                And would continue here! Wait how far does this go? I'm not really sure.</p>
             </div>
             <div class="Profile">
-                <img src="../assets/Charli.jpg" class="Profile Photo" alt="Chali Photo" fetchpriority="high"/>
-                <h1 class="Name">Charli Huang</h1>
+                <Image src={CharliPic} class="Profile-Photo" alt="Chali Photo" fetchpriority="high"/>
+                <h1 class="Name" data-sy-reveal="words">Huang</h1>
+                <p class="Profile-Bio" data-sy-reveal="lines">The bio would go here! And then Charli would write her bio here as well.
+                So I wonder what happens now.</p>
 
             </div>
         </div>
@@ -26,29 +32,41 @@ import Layout from "../Layout/Layout.astro"
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
-        padding: 9rem 0 10rem;
+        align-content: center;
+        justify-content: center;
+        padding: 6rem 0 6rem;
         position: relative;
         z-index: 1;
         min-height: 100vh;
+        text-align: center;
     }
     .Name {
-        max-width: 5.7em;
+        max-width: 10em;
         line-height: 1;
         font-size: 2rem;
-        //text-transform: uppercase;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        align-self: center;
+        align-content: center;
+        align-items: center;
+        text-align: justify;
 
     }
     .Profile {
         padding-left: 50px;
         padding-right: 50px;
         align-items: center;
+        flex-direction: column;
+        display: flex;
     }
     .Profile-Photo {
-        height: 200px;
-        width: 200px;
+        height: 300px;
+        width: 300px;
         z-index: 10;
+        border-radius: 50%;
+    }
+    .Profile-Bio {
+        font-size: 1rem;
+        font-weight: normal;
+        text-align: center;
+        //text-align-last: justify;
     }
 </style>
