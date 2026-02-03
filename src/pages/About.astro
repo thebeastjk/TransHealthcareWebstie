@@ -7,12 +7,14 @@ import { Image } from "astro:assets"
 
 
 <Layout title="About">
-    <div class="bg" />
     <div class="u-container">
+
         <div class="Column-personal">
             <div class="Profile">
                 <Image src={AstraPic} class="Profile-Photo" alt="Astra Photo" fetchpriority="high"/>
+                <span class="spacer"/>
                 <h1 class="Name" data-sy-reveal="words">Knapp</h1>
+                <span class="spacer"/>
                 <p class="Profile-Bio" data-sy-reveal="lines">A student at Junipero Serra High School, in their senior year. Has taken part in many different clubs and activities at serra, including Robotics, Mock Trial, Ethics Bowl and Track and Field.</p>
                 <span class="spacer"/>
                 <p class="Profile-Bio">
@@ -23,14 +25,15 @@ import { Image } from "astro:assets"
             </div>
             <div class="Profile">
                 <Image src={CharliPic} class="Profile-Photo" alt="Chali Photo" fetchpriority="high"/>
+                <span class="spacer"/>
                 <h1 class="Name" data-sy-reveal="words">Huang</h1>
+                <span class="spacer"/>
                 <p class="Profile-Bio" data-sy-reveal="lines">Senior at Junipero Serra High School. </p>
                 <span class="spacer"></span>
                 <p class="Profile-Bio" data-sy-reveal="lines">
                     I’ve spent lots of time volunteering to help the marginalized and learning about virtues and ethics through classes at Serra. 
                     I’ve also written about issues adjacent to this through the Serra Friar as a freelancer reporter.
-                    There are many close people in my life who are affected by the lack of healthcare, but also the general culture that supports harm toward transgender people. 
-                    Already, they are made to feel worse about themselves for being who they are, and this increasing reduction in accessibility for healthcare makes it impossible for them to even work towards being themselves.</p>
+                </p>
                 <span class="spacer"/>
                 <p class="Profile-Bio">There are many close people in my life who are affected by the lack of healthcare, but also the general culture that supports harm toward transgender people. Already, they are made to feel worse about themselves for being who they are, and this increasing reduction in accessibility for healthcare makes it impossible for them to even work towards being themselves.</p>
             </div>
@@ -45,16 +48,20 @@ import { Image } from "astro:assets"
     .Column-personal {
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: start;
         align-content: center;
+        vertical-align: top;
         justify-content: center;
-        padding: 6rem 0 6rem;
+        padding: 8rem 0 4rem;
         position: relative;
         z-index: 1;
-        min-height: 100vh;
         text-align: center;
-        max-height: 1000px;
+        height: 100%;
 
+        @media (--mq-phone) {
+            flex-direction: column;
+
+        }
     }
     .Name {
         max-width: 10em;

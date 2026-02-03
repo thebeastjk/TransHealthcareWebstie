@@ -15,6 +15,7 @@ const { logoUrl, logoAlt, links } = Astro.props;
 
 <sy-footer>
     <footer>
+        <div class="footerbg"/>
         <div class="inner u-container">
             <div class="wrapper">
                 <a class="logo" href={logoUrl}>
@@ -44,6 +45,7 @@ const { logoUrl, logoAlt, links } = Astro.props;
 <style>
     .cp {
         color: black;
+        z-index: 4;
     }
     sy-footer {
         @extend %u-text;
@@ -65,15 +67,16 @@ const { logoUrl, logoAlt, links } = Astro.props;
         bottom: 0;
         width: 100%;
         border-radius: 100px;
+        z-index: 4;
     }
 
     .inner {
         padding: 2rem 0;
+        z-index: 5;
     }
 
     .logo {
         position: relative;
-        z-index: 3;
 
         svg {
             width: 4.8rem;
@@ -125,6 +128,12 @@ const { logoUrl, logoAlt, links } = Astro.props;
                 }
             }
         }
+    }
+    .footerbg {
+        width: 100%;
+        height: 100%;
+        background: white;
+        position: absolute;
     }
 
     .wrapper {

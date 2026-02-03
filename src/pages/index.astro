@@ -29,30 +29,54 @@ import Logo from "../assets/logo.svg";
 							<span class="bold-hover">Trans healthcare</span>
 						</h1>
 					</div>
-					<p class="u-heading subtitle" data-sy-reveal="lines">Hopefully this works now. but honest what if it doesn't? that would suck.</p>
+					<p class="u-heading subtitle" data-sy-reveal="lines">Many trans people in the American South do not have access to healthcare.
+					This causes much suffering and pain within the trans community.</p>
 				</div>
-				<div class="bold-display">
-					<span class="bold-hover" data-sy-reveal="words">HI!</span>
-				</div>
-			</div>
-		</div>
-		<div class="u-container container">
-			<div class="inner">
-				<div class="content">
-					<h3 class="u-text">I have no idea what that thing is...</h3>
-					<h2 class="u-text subtitle">Wow! What about that button over there??</h2>
-				</div>
-				<div class="content">
-					<Button title="About!" color="primary" size="large" url="/About">About</Button>
+				<div class="secondcontent">
+					<div class="bold-display" style="justify-content: right;">
+						<span class="bold-hover" data-sy-reveal="words">34%</span>
+					</div>
+					<p class="u-heading info" data-sy-reveal="lines">The percentage of trans people in the South who are uninsured.</p>
 				</div>
 			</div>
 		</div>
-		<Introducing text="A new way to change the world." title="Uh oh..." />
+		<div class="u-container">
+			<div class="Call">
+				<div class="content">
+					<h1 class="u-text subtitle">Interested to learn what you can do?</h1>
+					<h2 class="u-text">Just click on the button right there!</h2>
+				</div>
+				<div class="content">
+					<Button title="Disruptive Action!" color="primary" size="large" url="/Action">Disruptive action</Button>
+				</div>
+			</div>
+		</div>
+		<Introducing text="Hopefully we can give it to them. Thanks for helping." title="They deserve better than this." />
 	</div>
 
 </Layout>
 
 <style>
+	.Call {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		padding: 4rem 0 5rem;
+		position: relative;
+		z-index: 1;
+
+		@media (--mq-tablet) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+	.secondcontent {
+		display: flex;
+		flex-direction: column;
+		text-align: right;
+		justify-content: right;
+	}
 	.bold-display {
 		font-size: 6em;
 		font-weight: 800;
@@ -68,7 +92,6 @@ import Logo from "../assets/logo.svg";
 		letter-spacing: .05em;
 	}
 	.bold-hover {
-		max-width: 200px;
 		font-weight: 600;
 		transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 	}
@@ -144,5 +167,9 @@ import Logo from "../assets/logo.svg";
 		--fs: var(--font-size-lg);
 		max-width: 25em;
 		margin-top: 1.5rem;
+	}
+	.info {
+		font-size: var(--font-size-sm);
+		margin-top: 1rem;
 	}
 </style>

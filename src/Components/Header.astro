@@ -70,6 +70,13 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
         position: relative;
 
         left: -25%;
+
+        @media (--mq-tablet) {
+            visibility: hidden;
+        }
+        @media (--mq-phone) {
+            visibility: hidden;
+        }
     }
     sy-head {
         --br: 1.5rem;
