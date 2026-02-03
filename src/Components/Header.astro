@@ -22,10 +22,8 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
                 <a class="logo" href={logoUrl}>
                     <Logo width="100" height="100"/>
                     <span class="u-src-only">{logoAlt}</span>
-
-                </a>
-                <a class="title" href={logoUrl}>
                     <span class="title">The Pain of Waiting</span>
+
                 </a>
 
                 <div class="menu">
@@ -40,7 +38,21 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
                     </ul>
                 </div>
 
+
+
                 <div class="buttons">
+
+
+
+                    <div style="">
+                        <div class="Descending" id="Descender">
+                            <a href="/Ethical-Mandate">Ethical Mandate</a>
+                            <a href="/Theological-Mandate">Theological Mandate</a>
+                        </div>
+
+                    </div>
+                    <a class="mandatestoggle">Mandates</a>
+
                     {
                         link1 ? (
                             <a class="login" href={link1.url}>
@@ -65,11 +77,81 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
 </header>
 
 <style>
+    .mandatestoggle {
+        @extend %u-text;
+
+        --fs: var(--font-size-sm);
+        position: relative;
+        transform: translateY(0);
+        transition: 0.3s var(--ease-out-expo);
+        transition-property: transform, color;
+        cursor: pointer;
+
+
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            background: currentcolor;
+            top: 115%;
+            width: 100%;
+            left: 0;
+            pointer-events: none;
+            transform: scaleX(0);
+            transition: transform 0.3s var(--ease-out-expo);
+            transform-origin: right;
+        }
+
+        &:hover,
+        &:focus {
+            &::after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        }
+
+        @media (--mq-phone) {
+            display: none;
+        }
+    }
+    .Descending {
+        height: 0; /* 100% Full-height */
+        width: 120%; /* 0 width - change this with JavaScript */
+        position: relative; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 3rem; /* Stay at the top */
+        left: 7rem;
+        visibility: hidden;
+        padding-bottom: .2rem;
+        background: linear-gradient(0, rgba(91, 206, 250, 0.5), rgba(0, 0, 0, 0));
+        border-radius: 0.5rem;
+        overflow-x: hidden; /* Disable horizontal scroll */
+         /* Place content 60px from the top */
+        clip-path: rect(0px 250px 0px 0px round 20%);
+        transition: clip-path 2s var(--ease-out-cubic);
+
+        :global(body.Man-open) & {
+            clip-path: rect(0px 250px 150px 0px round 20%);
+            height: 25%;
+            visibility: visible;
+            transition: clip-path 1s var(--ease-out-cubic);
+
+        }
+    }
+    .Descending a {
+        padding: .2rem .2rem .2rem .2rem;
+        text-decoration: none;
+        display: block;
+        transition: 0.3s;
+    }
+    .Descending a:hover {
+        text-decoration: underline;
+    }
     .title {
         text-align: left;
-        position: relative;
+        padding: 0 .5rem ;
 
-        left: -25%;
 
         @media (--mq-tablet) {
             visibility: hidden;
@@ -128,6 +210,7 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
         padding: 1rem 0;
         transition: padding 0.3s var(--ease-out-cubic);
 
+
         :global(body.is-nav-small) & {
             padding: 0.5rem 0;
         }
@@ -136,8 +219,10 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
     .wrapper {
         position: relative;
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        text-align: center;
 
         @media (--mq-tablet) {
             flex-wrap: wrap;
@@ -147,6 +232,9 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
     .logo {
         position: relative;
         z-index: 3;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
 
         svg {
             width: 2.4rem;
@@ -160,7 +248,7 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
     .menu {
         display: flex;
         position: absolute;
-        left: 0;
+        left: -5rem;
         right: 0;
         margin: 0 auto;
         width: min-content;
@@ -396,6 +484,9 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
 </style>
 
 <script>
+
+
+
     import { addScrollObserver } from "../utils/observers";
 
     const heroSelectors = ["sy-hero-home"];
@@ -407,16 +498,25 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
         hero = document.querySelector(heroSelectors.join(","));
         prevY = -1;
 
+        navigation = this.querySelector(".mandatestoggle")!;
+
+
         constructor() {
             super();
 
             addScrollObserver(this);
 
             this.toggleEl.addEventListener("click", this.toggleNav);
+            this.navigation.addEventListener("click", this.toggleMan);
+
 
             // addResizeObserver(this);
 
             this.onScroll(window.scrollY);
+        }
+
+        toggleMan() {
+            document.body.classList.toggle("Man-open")
         }
 
         onScroll(y: number) {
@@ -439,6 +539,8 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
                 classList.toggle("is-nav-hidden", shouldBeHidden);
             }
         }
+
+
 
         toggleNav = () => {
             document.body.classList.toggle("is-nav-opened");
