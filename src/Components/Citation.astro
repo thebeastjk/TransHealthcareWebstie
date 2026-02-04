@@ -1,8 +1,38 @@
 ---
+import type { Cite } from "../types.ts"
 
+interface Props {
+    Citations: Cite[],
+}
+
+const { Citations } = Astro.props;
 ---
 
+<div class="u-container">
+    <ul class="Container">
+        {
+            Citations.map((c) => (
+                <li class="cite-list">
+                    <h4 id={c.Inline}>{"[" + c.Inline + "]"}</h4>
+                    <p class="Citation">{c.mla}</p>
+                </li>
+            ))
+        }
+    </ul>
+</div>
 
-<Citation>
-    //Footer at the bottom of the page which say the citations we have
-</Citation>
+<style>
+    .Citation {
+        white-space: wrap;
+        text-indent: 5rem hanging;
+        color: black;
+
+    }
+    .Container {
+        position: relative;
+    }
+    .cite-list {
+        font-size: .8rem;
+    }
+
+</style>

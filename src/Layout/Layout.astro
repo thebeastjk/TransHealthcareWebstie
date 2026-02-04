@@ -5,10 +5,11 @@ import Footer from "../Components/Footer.astro";
 import SmoothScroll from "../Components/SmoothScroll.astro";
 import { useTranslations } from "../i18n/utils";
 import "../styles/global.css"
+import Citation from "../Components/Citation.astro";
 
 const { title } = Astro.props
 const t = useTranslations();
-import type { Link } from "../types";
+import type {Cite, Link} from "../types";
 
 const links = [
     { title: 'Home', url: '/' },
@@ -17,6 +18,11 @@ const links = [
     { title: 'Facts', url: '/Facts' },
 ];
 
+interface Props {
+    Citations: Cite[],
+}
+
+const { Citations } = Astro.props;
 ---
 
 
@@ -39,6 +45,7 @@ const links = [
         <main id="main">
             <div class="bg" />
             <slot/>
+            <Citation Citations={Citations}/>
         </main>
         <Footer logoUrl="/" logoAlt="Astra Knapp" links={links}/>
         <SmoothScroll />

@@ -3,15 +3,28 @@ import Layout from "../Layout/Layout.astro"
 import AstraPic from "../assets/Astra.jpg"
 import CharliPic from "../assets/Charli.jpg"
 import { Image } from "astro:assets"
+import InLine from "../Components/InLine.astro";
+
+const citations = [
+    {
+        Inline: "1",
+        mla: "LifeTouch, “Knapp Senior Photos”, 2025",
+    },
+    {
+        Inline: "2",
+        mla: "The second test of the citations.",
+    }
+]
 ---
 
 
-<Layout title="About">
+<Layout title="About" Citations={citations}>
     <div class="u-container">
 
         <div class="Column-personal">
             <div class="Profile">
                 <Image src={AstraPic} class="Profile-Photo" alt="Astra Photo" fetchpriority="high"/>
+                <InLine Citation={citations[0]}/>
                 <span class="spacer"/>
                 <h1 class="Name" data-sy-reveal="words">Knapp</h1>
                 <span class="spacer"/>
@@ -42,9 +55,7 @@ import { Image } from "astro:assets"
 </Layout>
 
 <style>
-    .spacer {
-        height: 10px;
-    }
+
     .Column-personal {
         display: flex;
         flex-direction: row;
@@ -85,6 +96,7 @@ import { Image } from "astro:assets"
         width: 300px;
         z-index: 10;
         border-radius: 50%;
+        object-fit: cover;
     }
     .Profile-Bio {
         font-size: 1rem;

@@ -1,0 +1,27 @@
+---
+import type { Cite } from "../types.ts"
+
+interface Props {
+    Citation: Cite,
+}
+
+const { Citation } = Astro.props;
+---
+
+<a href={"#" + Citation.Inline} class="inline">
+    {"[" + Citation.Inline + "]"}
+</a>
+
+
+<style>
+    .inline {
+        display: inline-block;
+        font-size: .6rem;
+        text-decoration: none;
+        background-color: transparent;
+        font-weight: normal;
+        border: none;
+        letter-spacing: .1rem;
+    }
+</style>
+

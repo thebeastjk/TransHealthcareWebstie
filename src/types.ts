@@ -10,3 +10,8 @@ export interface Image {
     src: string;
     alt: string;
 }
+
+export interface Cite {
+    Inline: string;
+    mla: string;
+}

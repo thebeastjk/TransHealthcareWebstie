@@ -1,26 +1,33 @@
 ---
 import Layout from "../Layout/Layout.astro";
 import HeroHome from "../Components/HeroHome.astro";
-/* import TextMarquee from "../Components/TextMarquee.astro";
-import GalleryText from "../Components/GalleryText.astro";
-import ImageMarquee from "../components/ImageMarquee.astro";
-import Faqs from "../components/Faqs.astro";
-import StepsTimeline from "../components/StepsTimeline.astro";
-import Plans from "../components/Plans.astro";
-import Statements from "../components/Statements.astro"; */
 import Introducing from "../Components/Introducing.astro";
-import GL from "../Components/GL.astro";
-import GLPlaces from "../Components/GlPlaces.astro";
+import type { Cite } from "../types.ts"
 import Button from "../Components/Button.astro";
 import Tflag from "../assets/tflag.svg"
 import Logo from "../assets/logo.svg";
+import InLine from "../Components/InLine.astro";
+import Remembrance from "../assets/Remembrance.webp"
+import Image from "astro/components/Image.astro";
 
+
+
+const citations = [
+	{
+		Inline: "1",
+		mla: "Johnson AH, Hill I, Beach-Ferrara J, Rogers BA, Bradford A. Common barriers to healthcare for transgender people in the U.S. Southeast. Int J Transgend Health. 2019 Dec 11;21(1):70-78. doi: 10.1080/15532739.2019.1700203. PMID: 33015660; PMCID: PMC7430435.",
+	},
+	{
+		Inline: "2",
+		mla: "Human Rights Watch. “United States: Transgender People at Risk of Violence.” Human Rights Watch, 18 Nov. 2021, www.hrw.org/news/2021/11/18/united-states-transgender-people-risk-violence",
+	}
+]
 ---
 
 
-<Layout title="Home">
+<Layout title="Home" Citations={citations}>
 	<div class="sy-hero-home">
-		<div class="bg"/>
+
 		<div class="u-container container">
 			<div class="inner Hero">
 				<div class="content">
@@ -34,7 +41,7 @@ import Logo from "../assets/logo.svg";
 				</div>
 				<div class="secondcontent">
 					<div class="bold-display" style="justify-content: right;">
-						<span class="bold-hover" data-sy-reveal="words">34%</span>
+						<span class="bold-hover" data-sy-reveal="words">34%</span><InLine Citation={citations[0]}/>
 					</div>
 					<p class="u-heading info" data-sy-reveal="lines">The percentage of trans people in the South who are uninsured.</p>
 				</div>
@@ -43,20 +50,50 @@ import Logo from "../assets/logo.svg";
 		<div class="u-container">
 			<div class="Call">
 				<div class="content">
-					<h1 class="u-text subtitle">Interested to learn what you can do?</h1>
-					<h2 class="u-text">Just click on the button right there!</h2>
+					<h1 class="bold-hover">Our Main Argument:</h1>
+					<h2 class="u-text">1.  If the lack of healthcare access for trans people negatively affects those people, that lack of access is wrong.</h2>
+					<h2 class="u-text">2.  The lack of healthcare access for trans people negatively affects trans people.
+					<h2 class="u-text">C.  Therefore that lack of access is wrong.</h2>
 				</div>
 				<div class="content">
-					<Button title="Disruptive Action!" color="primary" size="large" url="/Action">Disruptive action</Button>
+					<Button title="Ethical Mandate" color="primary" size="large" url="/Ethical-Mandate">Ethical Mandate</Button>
 				</div>
 			</div>
 		</div>
-		<Introducing text="Hopefully we can give it to them. Thanks for helping." title="They deserve better than this." />
+		<Introducing text="In the American South, there exists a bias and prejudice against transgender people that manifests in the form of a lack of healthcare resources for those transgender people, caused by a number of factors like harmful legislation, reduction of resource providers, and a dangerous political climate. This has lead to a significant negative impact on the mental and physical health of the transgender people affected, seen through high rates of suicide and violence toward transgender people." title="An Overview of the issue"/>
+		<div class="u-container container" style="height: 60%; padding-top: 0;">
+			<div class="inner" style="padding: 0">
+				<div class="content" style="width: 60%">
+					<div class="bold-display">
+						<h1 class="u-heading title">
+							<span>Why you should care</span>
+						</h1>
+					</div>
+					<div class="spacer"/>
+					<p class="blob">People should care because of the harm that this is causing to others.
+						The continuation of this hurts and kills many people each year, for no reason other than bigotry.
+						This issue only gets worse with time because of how deeply ingrained in Southern society/institutions it is,
+						so people need to make their feelings and beliefs on this matter known as soon as possible in order to start effective change.</p>
+				</div>
+				<div class="secondcontent">
+					<div class="bold-display" style="justify-content: right;">
+						<Image class="image" src={Remembrance} alt="Remembrance"/><InLine Citation={citations[1]}/>
+					</div>
+					<p class="u-heading info" data-sy-reveal="lines">A memorial of many trans people who have died.</p>
+				</div>
+			</div>
+		</div>
 	</div>
 
 </Layout>
 
 <style>
+	.blob {
+		padding-right: 2rem;
+		white-space: wrap;
+		text-overflow: fade;
+
+	}
 	.Call {
 		display: flex;
 		flex-direction: row;
@@ -95,10 +132,10 @@ import Logo from "../assets/logo.svg";
 		font-weight: 600;
 		transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 	}
-	.image-bold-hover {
-		animation: Bold infinite cubic-bezier(0.4, 0, 0.2, 1);
-		width: 100px;
-		height: 100px;
+	.image {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
 	}
 	.bold-display:hover .image-bold-hover {
 		animation-play-state: running;
@@ -140,6 +177,21 @@ import Logo from "../assets/logo.svg";
 		z-index: 1;
 		min-height: 100vh;
 
+		.Intro {
+			position: relative;
+			z-index: 9;
+			max-width: 50rem;
+			margin: 0 auto;
+			padding: 1rem;
+			text-align: center;
+			gap: 1rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			border-radius: 1.5rem;
+			backdrop-filter: blur(6px) saturate(1.05);
+		}
 
 		 .Hero {
 			align-items: center;
