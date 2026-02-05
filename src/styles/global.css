@@ -1,8 +1,11 @@
 @import './reset.css';
 @import './utils.css';
 @import './reveals.css';
+@import "tailwindcss";
+@plugin "daisyui";
 
-:root {
+@theme "daisyui";
+@theme {
     /* fonts */
     --font-size-base: 20px;
     --font-size-lg: 1.1rem;
@@ -54,19 +57,19 @@
     --container-max-width: 72rem;
     --container-offset: 4rem;
 
-    @media (--mq-desktop-sm) {
+    --breakpoint-desktop:{
         --font-size-base: 18px;
         --container-offset: 3rem;
-    }
+    };
 
-    @media (--mq-tablet) {
+    --breakpoint-tablet:{
         --font-size-base: 16px;
         --container-offset: 2rem;
-    }
+    };
 
-    @media (--mq-phone) {
+    --breakpoint-mobile:{
         --container-offset: 1.5rem;
-    }
+    };
 }
 
 html,
@@ -114,4 +117,68 @@ button {
 }
 .spacer {
     height: 10px;
+}
+
+.u-container {
+    margin-right: auto;
+    margin-left: auto;
+    width: calc(100% - var(--container-offset) * 2);
+    max-width: calc(var(--container-max-width) - var(--container-offset) * 2);
+}
+
+.u-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.u-text {
+     font: var(--fw, 400) var(--fs, var(--font-size-base)) / var(--fh, 1.2) var(--font-inter);
+     letter-spacing: var(--ls, -0.01em);
+ }
+
+.u-heading {
+     font: var(--fw, 350) var(--fs, var(--font-size-base)) / var(--lh, 1.2) var(--font-roboto-slab);
+     letter-spacing: var(--ls, -0.01em);
+ }
+
+@plugin "daisyui/theme" {
+    name: "T-colors";
+    default: true;
+    prefersdark: false;
+    color-scheme: "light";
+    --color-base-100: oklch(100% 0 0);
+    --color-base-200: oklch(98% 0 0);
+    --color-base-300: oklch(95% 0 0);
+    --color-base-content: oklch(21% 0.006 285.885);
+    --color-primary: #5BCEFA;
+    --color-primary-content: oklch(93% 0.034 272.788);
+    --color-secondary: #F5A9B8;
+    --color-secondary-content: oklch(94% 0.028 342.258);
+    --color-accent: #FFFFFF;
+    --color-accent-content: oklch(38% 0.063 188.416);
+    --color-neutral: #F5A9B8;
+    --color-neutral-content: oklch(92% 0.004 286.32);
+    --color-info: oklch(74% 0.16 232.661);
+    --color-info-content: oklch(29% 0.066 243.157);
+    --color-success: oklch(76% 0.177 163.223);
+    --color-success-content: oklch(37% 0.077 168.94);
+    --color-warning: oklch(82% 0.189 59.100);
+    --color-warning-content: oklch(41% 0.112 45.904);
+    --color-error: oklch(71% 0.194 13.428);
+    --color-error-content: oklch(27% 0.105 12.094);
+    --radius-selector: 2rem;
+    --radius-field: 0.5rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
 }

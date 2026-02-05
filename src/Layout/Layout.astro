@@ -33,6 +33,7 @@ const { Citations } = Astro.props;
         <Font cssVariable="--font-roboto-slab" preload />
         <Font cssVariable="--font-inter" preload />
         <title>{title + " - The Pain of Waiting"}</title>
+        <link href="../styles/output.css" rel="stylesheet">
     </head>
     <body>
         <a href = "#main" class="skip-link">{t("accessibility.skip-to-content")}</a>
