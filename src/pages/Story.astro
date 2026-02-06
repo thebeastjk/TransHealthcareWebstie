@@ -1,3 +1,49 @@
 ---
 
+import Image from "astro/components/Image.astro";
+import Layout from "../Layout/Layout.astro";
+import Placeholder from "../assets/Charli(placeholder).jpg"
+
+const citations = [
+    {
+        Inline: "1",
+        mla: "LifeTouch, “Knapp Senior Photos”, 2025",
+    },
+    {
+        Inline: "2",
+        mla: "Huang, “Golfing”, 2024",
+    }
+]
+
 ---
+
+<Layout title="Story" Citations={citations}>
+    <div class="u-container flex flex-col content-center">
+        <div class="flex-auto h-full w-full py-60 z-2 text-center">
+            <h1 class="text-2xl font-bold py-5">
+                So yeah this is some text
+            </h1>
+            <Image src={Placeholder} alt="inline image" class="float-right h-48 w-96 object-fit right-30 inset-30"/>
+            <p class="text-lg" data-sy-reveal="lines">
+                So then we begin to talk about what happened. And then we'd see if there was actually image wrap or if I'm a dumbass, it's probably the second one.
+                Maybe I'll even continue here, or maybe I should just copy paste the text that Charli has written...
+                Turns out she hasn't actually written that section yet, so I'm left to type too many words in order to test my code.
+                Maybe it'll even wrap around the image that I put. Perhaps I'll even commit a small crime. Maybe just like...
+                <span class="font-bold text-red-500">Arson!!</span>
+                or perhaps I'll just live in the gutters. Did I really need a single line in order to test it? <span class="text-yellow-300 font-black">Gods! </span><span class="text-red-500 font-black">damn</span> them!
+            </p>
+            <p class="text-lg">
+                WOMP WOMP
+            </p>
+
+        </div>
+        <div class="grid-span-full h-full w-full pt-50 pb-5 z-2 text-center">
+            <h1 class="text-xl font-medium">
+                So yeah, we did something.
+            </h1>
+            <p>
+                So then we begin to talk about what happened. And then we'd see if there was actually image wrap or if I'm a dumbass, it's probably the second one.
+            </p>
+        </div>
+    </div>
+</Layout>

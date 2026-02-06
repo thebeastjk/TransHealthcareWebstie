@@ -1,3 +1,40 @@
 ---
 
+import Layout from "../Layout/Layout.astro";
+
+const citations = [
+    {
+        Inline: "1",
+        mla: "LifeTouch, “Knapp Senior Photos”, 2025",
+    },
+    {
+        Inline: "2",
+        mla: "Huang, “Golfing”, 2024",
+    }
+]
 ---
+
+<Layout title="Story" Citations={citations}>
+    <div class="u-container flex flex-col content-center">
+        <div class="flex-auto h-full w-full py-60 z-2 text-center">
+            <div class="hover-3d">
+                <figure class="max-w-100 rounded-2xl">
+                    <h1 class="font-bold text-2xl py-6">
+                        Title!
+                    </h1>
+                    <p>
+                        So then I continue to push through the entire challenge.
+                    </p>
+                </figure>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</Layout>
