@@ -12,11 +12,13 @@ interface Props {
 
 }
 
+var ytranslate = 0;
+
 const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
 ---
 
 <header>
-    <sy-head>
+    <sy-head heading>
         <div class="inner u-container">
             <div class="wrapper">
                 <a class="logo" href={logoUrl}>
@@ -200,7 +202,7 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
             backdrop-filter: blur(15px);
         }
 
-        :global(body.is-nav-small) & {
+        :global(.is-nav-small) & {
             &::after {
                 transform: scaleY(1);
             }
@@ -212,7 +214,7 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
         transition: padding 0.3s var(--ease-out-cubic);
 
 
-        :global(body.is-nav-small) & {
+        :global(.is-nav-small) & {
             padding: 0.5rem 0;
         }
     }
@@ -315,8 +317,8 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
             color: var(--color-brand-3);
         }
 
-        :global(body.is-nav-opened &),
-        :global(body.is-nav-small) & {
+        :global(.is-nav-opened &),
+        :global( .is-nav-small) & {
             color: var(--color-brand-1);
         }
 
@@ -346,7 +348,7 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
             }
         }
 
-        :global(body.is-nav-opened) & {
+        :global(.is-nav-opened) & {
             color: var(--color-brand-1);
 
             > span {
@@ -375,6 +377,8 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
     import { addScrollObserver } from "../utils/observers";
 
     const heroSelectors = ["sy-hero-home"];
+
+    const heading = document.querySelectorAll('[heading]')
 
     class Header extends HTMLElement {
         smallThreshold = 200;
@@ -410,11 +414,16 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
 
             const classList = document.body.classList;
 
+            he
+
             const shouldBeSmall = y > this.smallThreshold;
             const isSmall = classList.contains("is-nav-small");
 
             if (shouldBeSmall !== isSmall) {
                 classList.toggle("is-nav-small", shouldBeSmall);
+                heading.forEach((head) => {
+                    head.classList.toggle("is-nav-small", shouldBeSmall);
+                });
             }
 
             const shouldBeHidden = y > this.hiddenThreshold && isDown;
@@ -422,6 +431,9 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
 
             if (shouldBeHidden !== isHidden) {
                 classList.toggle("is-nav-hidden", shouldBeHidden);
+                heading.forEach((head) => {
+                    head.classList.toggle("is-nav-hidden", shouldBeSmall);
+                });
             }
         }
 
