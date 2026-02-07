@@ -18,18 +18,18 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
 ---
 
 <header>
-    <sy-head heading class="bg-white/50">
-        <div class="inner u-container ">
-            <div class="wrapper">
+    <sy-head heading class="transition-all" id="navbar">
+        <div class="inner u-container" >
+            <div class="wrapper transition-all" id="headcontents">
                 <a class="logo" href={logoUrl}>
                     <Logo width="100" height="100"/>
                     <span class="u-src-only">{logoAlt}</span>
-                    <span class="title">The Pain of Waiting</span>
+                    <span class="text-left invisible w-0 p-0 lg:visible lg:w-fit lg:p-3">The Pain of Waiting</span>
 
                 </a>
 
                 <div class="border-spacing-0.5">
-                    <ul class="flex flex-row  gap-4">
+                    <ul class="flex flex-row  gap-4 lg:visible md:invisible invisible lg:w-fit w-0">
                         {
                             links.map((l) => (
                                 <li class="">
@@ -46,10 +46,10 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
 
 
 
-                <div class="buttons">
+                <div class="flex right-0 align-middle gap-1.5 place-content-center text-center">
 
-                    <div class="dropdown dropdown-center outline-0">
-                        <div tabindex="0" role="button" class="bg-transparent cursor-pointer">Mandates</div>
+                    <div class="dropdown dropdown-center outline-0 place-content-center">
+                        <div tabindex="0" role="button" class="bg-transparent cursor-pointer lg:visible md:invisible invisible">Mandates</div>
                         <ul tabindex="-1" class="dropdown-content outline-0 menu bg-linear-to-t from-blue-300/100 to-blue-300/0 rounded-box z-1 w-52 p-2 text-center">
                             <li><a href="/Ethical-Mandate">Ethical Mandate</a></li>
                             <li> <a href="/Theological-Mandate">Theological Mandate</a></li>
@@ -58,21 +58,41 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
 
                     {
                         link1 ? (
-                            <a class="login" href={link1.url}>
+                            <p class="place-content-center group relative lg:visible md:invisible invisible lg:w-fit w-0">
+                                <a class="" href={link1.url}>
                                 {link1.title}
-                            </a>
+                                </a>
+                                <span class="absolute bottom-1 left-0 w-0 transition-all h-0.5 bg-black group-hover:w-full"/>
+                            </p>
+
                         ) : null
                     }
                     {link2 ? <Button {...link2} revealable={false}/> : null}
 
-                    <button type="button" class="toggle" aria-label="">
-                        <span class="u-sr-only">Toggle Mobile Menu</span>
-                        <span aria-hidden>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
+                    <button id="menu-btn" class="md:visible lg:invisible sm:visible cursor-pointer">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
                     </button>
+
+                    <div id="mobile-menu" class="hidden md:hidden pb-4">
+                        <ul class="flex flex-row  gap-4 lg:visible md:invisible invisible lg:w-fit w-0">
+                            {
+                                links.map((l) => (
+                                        <li class="">
+                                            <p  class="text-lg group relative w-max">
+                                                <a href={l.url}>{l.title}</a>
+                                                <span class="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-black group-hover:w-full"/>
+                                            </p>
+
+                                        </li>
+                                ))
+                            }
+                        </ul>
+                        <a href="/Ethical-Mandate">Ethical Mandate</a>
+                        <a href="/Theological-Mandate">Theological Mandate</a>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -80,44 +100,7 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
 </header>
 
 <style>
-    .mandatestoggle {
-        @extend %u-text;
 
-        --fs: var(--font-size-sm);
-        position: relative;
-        transform: translateY(0);
-        transition: 0.3s var(--ease-out-expo);
-        transition-property: transform, color;
-        cursor: pointer;
-
-
-
-        &::after {
-            content: "";
-            position: absolute;
-            height: 2px;
-            background: currentcolor;
-            top: 115%;
-            width: 100%;
-            left: 0;
-            pointer-events: none;
-            transform: scaleX(0);
-            transition: transform 0.3s var(--ease-out-expo);
-            transform-origin: right;
-        }
-
-        &:hover,
-        &:focus {
-            &::after {
-                transform: scaleX(1);
-                transform-origin: left;
-            }
-        }
-
-        --breakpoint-phone:{
-            display: none;
-        };
-    }
     .Descending {
         height: 0; /* 100% Full-height */
         width: 120%; /* 0 width - change this with JavaScript */
@@ -378,16 +361,22 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
 
     const heroSelectors = ["sy-hero-home"];
 
-    const heading = document.querySelectorAll('[heading]')
+
 
     class Header extends HTMLElement {
-        smallThreshold = 200;
-        hiddenThreshold = 100;
+        showThreshold = 200;
+        backgroundThreshold = 300;
         toggleEl = this.querySelector(".toggle")!;
         hero = document.querySelector(heroSelectors.join(","));
         prevY = -1;
 
         navigation = this.querySelector(".mandatestoggle")!;
+        heading = document.getElementById('navbar')!;
+        headcontents = document.getElementById('headcontents')!;
+
+        menuBtn = document.getElementById('menu-btn')!;
+        mobileMenu = document.getElementById('mobile-menu')!;
+
 
 
         constructor() {
@@ -397,12 +386,17 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
 
             this.toggleEl.addEventListener("click", this.toggleNav);
             this.navigation.addEventListener("click", this.toggleMan);
+            this.menuBtn.addEventListener("click", () => {
+                this.mobileMenu.classList.toggle('hidden');
+            });
 
 
             // addResizeObserver(this);
 
             this.onScroll(window.scrollY);
         }
+
+
 
         toggleMan() {
             document.body.classList.toggle("Man-open")
@@ -414,27 +408,21 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
 
             const classList = document.body.classList;
 
-            he
-
-            const shouldBeSmall = y > this.smallThreshold;
-            const isSmall = classList.contains("is-nav-small");
-
-            if (shouldBeSmall !== isSmall) {
-                classList.toggle("is-nav-small", shouldBeSmall);
-                heading.forEach((head) => {
-                    head.classList.toggle("is-nav-small", shouldBeSmall);
-                });
+            if (isDown && y >= this.showThreshold) {
+                this.headcontents.classList.add("-top-60");
+                this.heading.classList.add("h-0");
+            } else {
+                this.headcontents.classList.remove("-top-60");
+                this.heading.classList.remove("h-0");
             }
 
-            const shouldBeHidden = y > this.hiddenThreshold && isDown;
-            const isHidden = classList.contains("is-nav-hidden");
-
-            if (shouldBeHidden !== isHidden) {
-                classList.toggle("is-nav-hidden", shouldBeHidden);
-                heading.forEach((head) => {
-                    head.classList.toggle("is-nav-hidden", shouldBeSmall);
-                });
+            if (y >= this.backgroundThreshold) {
+                this.heading.classList.add("bg-white/50");
+            } else {
+                this.heading.classList.remove("bg-white/50");
             }
+
+
         }
 
 
