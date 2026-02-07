@@ -21,7 +21,7 @@ const citations = [
 <Layout title="About" Citations={citations}>
     <div class="u-container">
 
-        <div class="Column-personal">
+        <div class="Column-personal flex flex-col md:flex-row gap-10">
             <div class="Profile">
                 <Image src={AstraPic} class="Profile-Photo" alt="Astra Photo" fetchpriority="high"/>
                 <InLine Citation={citations[0]}/>
@@ -58,8 +58,7 @@ const citations = [
 <style>
 
     .Column-personal {
-        display: flex;
-        flex-direction: row;
+
         align-items: start;
         align-content: center;
         vertical-align: top;
@@ -70,10 +69,7 @@ const citations = [
         text-align: center;
         height: 100%;
 
-        @media (--mq-phone) {
-            flex-direction: column;
 
-        }
     }
     .Name {
         max-width: 10em;

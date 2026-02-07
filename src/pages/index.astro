@@ -25,7 +25,7 @@ const citations = [
 	<div class="sy-hero-home">
 
 		<div class="u-container container">
-			<div class="inner Hero">
+			<div class="flex flex-col lg:flex-row place-content-center gap-5 py-60 Hero ">
 				<div class="content">
 					<div class="bold-display">
 						<h1 class="u-heading title" data-sy-reveal="words">
@@ -44,7 +44,7 @@ const citations = [
 			</div>
 		</div>
 		<div class="u-container">
-			<div class="Call">
+			<div class="Call flex flex-col xl:flex-row gap-5">
 				<div class="content">
 					<h1 class="bold-hover">Our Main Argument:</h1>
 					<h2 class="u-text">1.  If the lack of healthcare access for trans people negatively affects those people, that lack of access is wrong.</h2>
@@ -58,10 +58,10 @@ const citations = [
 		</div>
 		<Introducing text="In the American South, there exists a bias and prejudice against transgender people that manifests in the form of a lack of healthcare resources for those transgender people, caused by a number of factors like harmful legislation, reduction of resource providers, and a dangerous political climate. This has lead to a significant negative impact on the mental and physical health of the transgender people affected, seen through high rates of suicide and violence toward transgender people." title="An Overview of the issue"/>
 		<div class="u-container container" style="height: 60%; padding-top: 0;">
-			<div class="inner" style="padding: 0">
-				<div class="content" style="width: 60%">
+			<div class="flex flex-col-reverse lg:flex-row gap-5 py-10">
+				<div class="content text-center lg:text-left w-full lg:w-3/5 align-middle place-content-center" >
 					<div class="bold-display">
-						<h1 class="u-heading title">
+						<h1 class="text-2xl font-bold mb-5 tracking-wide align-middle lg:text-4xl">
 							<span>Why you should care</span>
 						</h1>
 					</div>
@@ -91,8 +91,6 @@ const citations = [
 
 	}
 	.Call {
-		display: flex;
-		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
 		padding: 4rem 0 5rem;
@@ -114,7 +112,6 @@ const citations = [
 		font-size: 6em;
 		font-weight: 800;
 		display: flex;
-		align-items: normal;
 		letter-spacing: -.03em;
 		align-content: center;
 
