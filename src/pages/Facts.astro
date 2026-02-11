@@ -6,28 +6,54 @@ import InLine from "../Components/InLine.astro";
 const citations = [
     {
         Inline: "1",
-        mla: "LifeTouch, “Knapp Senior Photos”, 2025",
+        mla: "Smart, Benjamin D et al. “Transgender women of color in the U.S. South: A qualitative study of social determinants of health and healthcare perspectives.” International journal of transgender health vol. 23,1-2 164-177. 17 Dec. 2020, doi:10.1080/26895269.2020.1848691",
     },
     {
         Inline: "2",
-        mla: "Huang, “Golfing”, 2024",
+        mla: "James, Sandy E., et al. The Report of the 2015 U.S. Transgender Survey. National Center for Transgender Equality, Dec. 2016.",
+    },
+    {
+        Inline: "3",
+        mla: "CDC. “U.S. Uninsured Rate Drops by 15% since 2020.” NCHS Pressroom, 25 June 2025, www.cdc.gov/nchs/pressroom/releases/20250624.html. Accessed 4 Feb. 2026.",
+    },
+    {
+        Inline: "4",
+        mla: "Moaton, Tatyana . “San Francisco Community Health Center.” San Francisco Community Health Center, 2025, www.sfcommunityhealth.org/gamc-policy-brief-2025.\n",
+    },
+    {
+        Inline: "5",
+        mla: "Yılmaz, Büşra et al. “Transgender Individuals in the Eyes of Dental Professionals: A Data-Driven Study.” Oral diseases vol. 31,8 (2025): 2652-2660. doi:10.1111/odi.15310\n",
+    },
+    {
+        Inline: "6",
+        mla: "Johnson, Austin H et al. “Common barriers to healthcare for transgender people in the U.S. Southeast.” International journal of transgender health vol. 21,1 70-78. 11 Dec. 2019, doi:10.1080/15532739.2019.1700203",
+    },
+    {
+      Inline: "7",
+      mla: "James, Sandy E., et al. The Report of the 2022 U.S. Transgender Survey. National Center for Transgender Equality, Dec. 2022.",
     }
+
 ]
 ---
 
-<Layout title="Story" Citations={citations}>
+<Layout title="Facts" Citations={citations}>
     <div class="u-container flex flex-col content-center">
-        <div class="col-span-3 sm:col-span-1 h-full w-full py-60 z-2 text-center">
-            <h1 class="font-black text-4xl py-5">
+        <div class="flex flex-col z-2 w-full pt-40 pb-10 text-center">
+            <h1 class="font-black text-4xl py-5" data-sy-reveal="words">
                 Facts
             </h1>
-            <a href={"#" + citations[0].Inline}>
-                <div class="hover-3d w-75 h-50 p-2" >
+        </div>
+
+        <div class="grid grid-cols-3 sm:col-span-1 z-2 text-center" >
+
+            <a href={"#" + citations[0].Inline} data-sy-reveal="words">
+                <div class="hover-3d w-full h-full p-2" >
                     <figure class="max-w-100 rounded-2xl bg-blue-300 place-content-center">
                         <div class="stat">
-                            <div class="stat-title text-base-300">Number of people</div>
-                            <div class="stat-value">8 Million</div>
-                            <div class="stat-desc text-base-300">That's so many...</div>
+                            <div class="stat-title text-base-300">High Cost of care</div>
+                            <div class="font-bold grid-cols-1 font-bold grid-cols-1  text-2xl/5">"Many avoided necessary care"</div>
+                            <div class="font-light text-base-300 py-1">Due to the challenges faced within the medical system,
+                            many trans people choose to forego primary care.</div>
                         </div>
                     </figure>
                     <div></div>
@@ -40,13 +66,15 @@ const citations = [
                     <div></div>
                 </div>
             </a>
-            <a href={"#" + citations[0].Inline}>
-                <div class="hover-3d w-75 h-50 p-2" >
+            <a href={"#" + citations[1].Inline} data-sy-reveal="words">
+                <div class="hover-3d w-full h-full p-2" >
                     <figure class="max-w-100 rounded-2xl bg-blue-300 place-content-center">
                         <div class="stat">
-                            <div class="stat-title text-base-300">Number of people</div>
-                            <div class="stat-value">8 Million</div>
-                            <div class="stat-desc text-base-300">That's so many...</div>
+                            <div class="stat-title text-base-300">Percentage of trans people uninsured</div>
+                            <div class="font-bold grid-cols-1 whitespace-nowrap text-2xl">14%</div>
+                            <div class="font-light text-base-300 py-1">The discrimination faced by trans people within the healthcare
+                            system makes it so that 14% are uninsured, unlike the 8.2% average.</div>
+
                         </div>
                     </figure>
                     <div></div>
@@ -59,13 +87,15 @@ const citations = [
                     <div></div>
                 </div>
             </a>
-            <a href={"#" + citations[0].Inline}>
-                <div class="hover-3d w-75 h-50 p-2" >
+            <a href={"#" + citations[3].Inline} data-sy-reveal="words">
+                <div class="hover-3d w-full h-full p-2" >
                     <figure class="max-w-100 rounded-2xl bg-blue-300 place-content-center">
                         <div class="stat">
-                            <div class="stat-title text-base-300">Number of people</div>
-                            <div class="stat-value">8 Million</div>
-                            <div class="stat-desc text-base-300">That's so many...</div>
+                            <div class="stat-title text-base-300">Georgia's spending</div>
+                            <div class="font-bold grid-cols-1 whitespace-nowrap text-2xl">4.1 Million</div>
+                            <div class="font-light text-base-300 py-1">Many states spend more in litigation cost attempting to
+                            deny trans people healthcare then they would giving those people healthcare.</div>
+
                         </div>
                     </figure>
                     <div></div>
@@ -78,13 +108,15 @@ const citations = [
                     <div></div>
                 </div>
             </a>
-            <a href={"#" + citations[0].Inline}>
-                <div class="hover-3d w-75 h-50 p-2" >
+            <a href={"#" + citations[4].Inline} data-sy-reveal="words">
+                <div class="hover-3d w-full h-full p-2" >
                     <figure class="max-w-100 rounded-2xl bg-blue-300 place-content-center">
                         <div class="stat">
-                            <div class="stat-title text-base-300">Number of people</div>
-                            <div class="stat-value">8 Million</div>
-                            <div class="stat-desc text-base-300">That's so many...</div>
+                            <div class="stat-title whitespace-break-spaces text-base-300"></div>
+                            <div class="font-bold grid-cols-1 whitespace-nowrap text-2xl">19/20 Dentists</div>
+                            <div class="font-light text-base-300 py-1">Agreed that there was a social prejudice against trans people.
+                            14.8% were aware of the social prejudice, and yet said they too held social prejudice.</div>
+
                         </div>
                     </figure>
                     <div></div>
@@ -97,13 +129,162 @@ const citations = [
                     <div></div>
                 </div>
             </a>
-            <a href={"#" + citations[0].Inline}>
-                <div class="hover-3d w-75 h-50 p-2" >
+            <a href={"#" + citations[5].Inline} data-sy-reveal="words">
+                <div class="hover-3d w-full h-full p-2" >
                     <figure class="max-w-100 rounded-2xl bg-blue-300 place-content-center">
                         <div class="stat">
-                            <div class="stat-title text-base-300">Number of people</div>
-                            <div class="stat-value">8 Million</div>
-                            <div class="stat-desc text-base-300">That's so many...</div>
+                            <div class="stat-title text-base-300">Trans patients are often</div>
+                            <div class="font-bold grid-cols-1  text-2xl/5">Harassed and Misgendered</div>
+                            <div class="font-light text-base-300 py-1">When they go to doctor's offices.
+                            Additionally, many doctors lack knowledge on trans patients.</div>
+
+                        </div>
+                    </figure>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </a>
+            <a href={"#" + citations[6].Inline} data-sy-reveal="words">
+                <div class="hover-3d w-full h-full p-2" >
+                    <figure class="max-w-100 rounded-2xl bg-blue-300 place-content-center">
+                        <div class="stat">
+                            <div class="stat-title text-base-300">Out to their providers</div>
+                            <div class="font-bold grid-cols-1 whitespace-nowrap text-2xl">50%</div>
+                            <div class="font-light text-base-300 py-1">Only about 50% of trans people
+                            are out to their medical providers.</div>
+
+                        </div>
+                    </figure>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </a>
+            <a href={"#" + citations[6].Inline} data-sy-reveal="words">
+                <div class="hover-3d w-full h-full p-2" >
+                    <figure class="max-w-100 rounded-2xl bg-blue-300 place-content-center">
+                        <div class="stat">
+                            <div class="stat-title whitespace-break-spaces text-base-300">Trans people who did not see a doctor because of cost</div>
+                            <div class="font-bold grid-cols-1 whitespace-nowrap text-2xl">28%</div>
+                            <div class="font-light text-base-300 py-1">Trans people who are uninsured, or their
+                            insurance does not cover transition, are left to cover the cost themselves.</div>
+
+                        </div>
+                    </figure>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </a>
+            <a href={"#" + citations[6].Inline} data-sy-reveal="words">
+                <div class="hover-3d w-full h-full p-2" >
+                    <figure class="max-w-100 rounded-2xl bg-blue-300 place-content-center">
+                        <div class="stat">
+                            <div class="stat-title whitespace-break-spaces text-base-300">Didn't see a doctor because of fear of harassment</div>
+                            <div class="font-bold grid-cols-1 whitespace-nowrap text-2xl">24%</div>
+                            <div class="font-light text-base-300 py-1">Doctor's offices are not the
+                            safe spaces that they should be for trans people.</div>
+
+                        </div>
+                    </figure>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </a>
+            <a href={"#" + citations[6].Inline} data-sy-reveal="words">
+                <div class="hover-3d w-full h-full p-2" >
+                    <figure class="max-w-100 rounded-2xl bg-blue-300 place-content-center">
+                        <div class="stat">
+                            <div class="stat-title whitespace-break-spaces text-base-300">Had a negative experience with healthcare within 1 year</div>
+                            <div class="font-bold grid-cols-1 whitespace-nowrap text-2xl">47%</div>
+                            <div class="font-light text-base-300 py-1">The most common negative experiences were misgendering
+                            and having to inform doctors about trans health.</div>
+
+                        </div>
+                    </figure>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </a>
+            <a href={"#" + citations[6].Inline} data-sy-reveal="words">
+                <div class="hover-3d w-full h-full p-2" >
+                    <figure class="max-w-100 rounded-2xl bg-blue-300 place-content-center">
+                        <div class="stat">
+                            <div class="stat-title whitespace-break-spaces text-base-300">Were denied treatment without a reason given</div>
+                            <div class="font-bold grid-cols-1 whitespace-nowrap text-2xl">22%</div>
+                            <div class="font-light text-base-300 py-1">Of those who were denied treatment, many
+                            are never given a reason, and are left without the resources to find care.</div>
+
+                        </div>
+                    </figure>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </a>
+            <a href={"#" + citations[6].Inline} data-sy-reveal="words">
+                <div class="hover-3d w-full h-full p-2" >
+                    <figure class="max-w-100 rounded-2xl bg-blue-300 place-content-center">
+                        <div class="stat">
+                            <div class="stat-title whitespace-break-spaces text-base-300">Had a negative experience with health insurance within 1 year</div>
+                            <div class="font-bold grid-cols-1 whitespace-nowrap text-2xl">26%</div>
+                            <div class="font-light text-base-300 py-1">Common experiences included denial of transition related care,
+                            refusal to change recognized gender, and denial of surgery coverage.</div>
+
+                        </div>
+                    </figure>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </a>
+            <a href={"#" + citations[6].Inline} data-sy-reveal="words">
+                <div class="hover-3d w-full h-full p-2" >
+                    <figure class="max-w-100 rounded-2xl bg-blue-300 place-content-center">
+                        <div class="stat">
+                            <div class="stat-title whitespace-break-spaces text-base-300">Does not have access to transition related provider</div>
+                            <div class="font-bold grid-cols-1 whitespace-nowrap text-2xl">43%</div>
+                            <div class="font-light text-base-300 py-1">Many trans people do not have access to a medical provider
+                            who specializes in trans people.</div>
+
                         </div>
                     </figure>
                     <div></div>

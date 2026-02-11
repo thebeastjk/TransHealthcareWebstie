@@ -8,10 +8,11 @@ interface Props {
 const { Citation } = Astro.props;
 ---
 
-<a href={"#" + Citation.Inline} class="inline">
-    {"[" + Citation.Inline + "]"}
-</a>
-
+<p class="inline">
+    <a href={"#" + Citation.Inline} class="block">
+        {"[" + Citation.Inline + "]"}
+    </a>
+</p>
 
 <style>
     .inline {
@@ -22,6 +23,7 @@ const { Citation } = Astro.props;
         font-weight: normal;
         border: none;
         letter-spacing: .1rem;
+        vertical-align: top;
     }
 </style>
 
