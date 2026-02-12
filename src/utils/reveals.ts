@@ -1,6 +1,7 @@
 import { addGlobalTicker } from "./globalTicker.ts";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
+let test:boolean = false;
 
 const observer = new IntersectionObserver(intersectCallback, {
     root: null,
@@ -17,11 +18,13 @@ function intersectCallback(entries: IntersectionObserverEntry[]) {
 }
 
 function visibilityObserve(element: HTMLElement, onChange: (entries: IntersectionObserverEntry) => void) {
+
     const fns = map.get(element) || [];
     fns.push(onChange)
     map.set(element, fns)
 
     observer.observe(element)
+
 }
 
 function visibilityUnobserve(element: HTMLElement, onChange: (entries: IntersectionObserverEntry) => void) {
@@ -34,7 +37,7 @@ function visibilityUnobserve(element: HTMLElement, onChange: (entries: Intersect
     }
 }
 
-const stagger = 100;
+const stagger = 1;
 const toReveal: {el: HTMLElement; shouldReveal: boolean, inFn?: () => void}[] = [];
 
 const stMap = new WeakMap<HTMLElement, InstanceType<typeof SplitText>>()
@@ -180,6 +183,7 @@ const fns = {
 function onVisibilityChange(ent: IntersectionObserverEntry) {
     const el = ent.target as HTMLElement;
 
+    if(test==false){
     if(ent.isIntersecting) {
         const fn = el.dataset.syReveal as keyof typeof fns | undefined;
 
@@ -196,12 +200,14 @@ function onVisibilityChange(ent: IntersectionObserverEntry) {
                 toReveal[i].shouldReveal = true;
             }
         }, Math.min(toReveal.length * stagger));
+        test = false;
     } else {
         const i = toReveal.findIndex((i) => i.el === el);
         if (i >= 0 && toReveal[i].shouldReveal===false) {
             toReveal.splice(i, 1);
         }
     }
+}
 }
 
 addGlobalTicker(() => {
