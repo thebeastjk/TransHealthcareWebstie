@@ -2,8 +2,9 @@
 
 import Image from "astro/components/Image.astro";
 import Layout from "../Layout/Layout.astro";
-import prison from "../assets/prison.webp"
-import InLine from "../Components/InLine.astro"
+import prison from "../assets/prison.webp";
+import InLine from "../Components/InLine.astro";
+import Record from "../assets/Prison_record.png";
 
 const citations = [
     {
@@ -47,6 +48,7 @@ const citations = [
                 <p class="text-lg px-8 py-4">
                     For a time, Cano was provided razors to shave, as well as nail polish and makeup to allow some respite from dysphoria. That was until recently, when the warden of the prison decided that they should be taken away. The reason? The makeup could be used to hide cuts or bruises from officers to hide fights. Alternatively, they claimed it was possible they could be used to dress up pillows as people in escape attempts. It should be noted that Cano has no record of disciplinary sanctions or escape attempts, and currently works as a wardkeeper.<InLine Citation={citations[3]}/>
                 </p>
+                <Image src={Record} alt="A photo of Cano's prison record" class=" w-2/4 object-contain right-30 inset-30 pb-4"/>
 
 
                 <p class="text-lg px-8 py-4" >

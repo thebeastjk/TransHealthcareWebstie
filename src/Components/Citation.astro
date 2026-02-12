@@ -12,8 +12,8 @@ const { Citations } = Astro.props;
     <ul class="Container">
         {
             Citations.map((c) => (
-                <li class="cite-list">
-                    <h4 id={c.Inline}>{"[" + c.Inline + "]"}</h4>
+                <li class="cite-list transition duration-1000 ease-in" id={c.Inline}>
+                    <h4 >{"[" + c.Inline + "]"}</h4>
                     <p class="Citation">{c.mla}</p>
                 </li>
             ))
@@ -36,3 +36,4 @@ const { Citations } = Astro.props;
     }
 
 </style>
+

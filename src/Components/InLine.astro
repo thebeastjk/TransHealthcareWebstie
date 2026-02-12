@@ -8,7 +8,7 @@ interface Props {
 const { Citation } = Astro.props;
 ---
 
-<a href={"#" + Citation.Inline} class="inline">
+<a href={Citation.Inline} class="inline" id={Citation.Inline + ".button"}>
     {"[" + Citation.Inline + "]"}
 </a>
 
@@ -23,5 +23,7 @@ const { Citation } = Astro.props;
         letter-spacing: .1rem;
         vertical-align: top;
     }
+
 </style>
+
 
