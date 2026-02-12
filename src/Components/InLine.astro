@@ -8,11 +8,9 @@ interface Props {
 const { Citation } = Astro.props;
 ---
 
-<p class="inline">
-    <a href={"#" + Citation.Inline} class="block">
-        {"[" + Citation.Inline + "]"}
-    </a>
-</p>
+<a href={"#" + Citation.Inline} class="inline">
+    {"[" + Citation.Inline + "]"}
+</a>
 
 <style>
     .inline {
