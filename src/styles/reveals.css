@@ -28,7 +28,7 @@
 }
 [data-sy-reveal="chars"] {
     .i-mask {
-        display: block;
+        display: inline-block;
     }
 }
 [data-sy-reveal="lines"] {
