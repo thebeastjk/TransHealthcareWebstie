@@ -18,12 +18,15 @@ function intersectCallback(entries: IntersectionObserverEntry[]) {
 }
 
 function visibilityObserve(element: HTMLElement, onChange: (entries: IntersectionObserverEntry) => void) {
+    
+        const fns = map.get(element) || [];
+        fns.push(onChange)
+        map.set(element, fns)
 
-    const fns = map.get(element) || [];
-    fns.push(onChange)
-    map.set(element, fns)
-
-    observer.observe(element)
+        observer.observe(element)
+        
+    
+    
 
 }
 
@@ -42,7 +45,7 @@ const toReveal: {el: HTMLElement; shouldReveal: boolean, inFn?: () => void}[] = 
 
 const stMap = new WeakMap<HTMLElement, InstanceType<typeof SplitText>>()
 
-function getSt(el:HTMLElement, type: "words" | "lines" | "test"): SplitText {
+function getSt(el:HTMLElement, type: "words" | "lines" | "chars"): SplitText {
     if(stMap.has(el)) {
         return stMap.get(el)!
     }
@@ -52,7 +55,7 @@ function getSt(el:HTMLElement, type: "words" | "lines" | "test"): SplitText {
         tag: "span",
         autoStart: true,
         mask: type,
-        testClass : "i",
+        charsClass: "i",
         wordsClass: "i",
         linesClass: "i",
         onSplit(_st) {
@@ -71,21 +74,21 @@ function getSt(el:HTMLElement, type: "words" | "lines" | "test"): SplitText {
 }
 
 const fns = {
-    test(el: HTMLElement){
-        getSt(el, "test");
+    chars(el: HTMLElement){
+        getSt(el, "chars");
         let lastOut: ReturnType<typeof gsap.to> | null = null
 
         
         return {
             in() {
-                const st = getSt(el, "test");
+                const st = getSt(el, "chars");
                 if (lastOut) {
                     lastOut.kill();
                     lastOut = null
                 }
 
                 gsap.fromTo(
-                    st.words,
+                    st.chars,
                     {
                         opacity: 1,
                         rotate : 5,
@@ -103,10 +106,10 @@ const fns = {
                 );
             },
             out(next: () => void) {
-                const st = getSt(el, "test");
+                const st = getSt(el, "chars");
 
                 gsap.to(
-                    st.words,
+                    st.chars,
                     {
                         opacity: 0,
                         ease: "power3.out",
@@ -238,9 +241,17 @@ function onVisibilityChange(ent: IntersectionObserverEntry) {
     if(ent.isIntersecting) {
         const fn = el.dataset.syReveal as keyof typeof fns | undefined;
 
+        let reveal = el.classList.contains("revealed");
+
+        if (reveal) {
+            return;
+        } else {
+            el.classList.add("revealed");
+        }
+
         toReveal.push({
             el,
-            shouldReveal: false,
+            shouldReveal: reveal,
             inFn: fn && fns[fn] ? fns[fn](el).in : undefined,
         });
 
@@ -281,7 +292,7 @@ document.fonts.ready.then(() => {
                 elem.classList.add("is-in");
             });
 
-            /*elem.addEventListener('reveal-out', () => {
+            elem.addEventListener('reveal-out', () => {
                 if (fn) {
                     fn.out(() => {
                         elem.classList.remove("is-in");
@@ -289,7 +300,7 @@ document.fonts.ready.then(() => {
                 } else {
                     elem.classList.remove("is-in");
                 }
-            });*/
+            });
         } else {
             visibilityObserve(elem, onVisibilityChange);
         }
