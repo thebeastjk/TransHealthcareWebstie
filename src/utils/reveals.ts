@@ -42,7 +42,7 @@ const toReveal: {el: HTMLElement; shouldReveal: boolean, inFn?: () => void}[] = 
 
 const stMap = new WeakMap<HTMLElement, InstanceType<typeof SplitText>>()
 
-function getSt(el:HTMLElement, type: "words" | "lines"): SplitText {
+function getSt(el:HTMLElement, type: "words" | "lines" | "test"): SplitText {
     if(stMap.has(el)) {
         return stMap.get(el)!
     }
@@ -52,6 +52,7 @@ function getSt(el:HTMLElement, type: "words" | "lines"): SplitText {
         tag: "span",
         autoStart: true,
         mask: type,
+        testClass : "i",
         wordsClass: "i",
         linesClass: "i",
         onSplit(_st) {
@@ -70,6 +71,57 @@ function getSt(el:HTMLElement, type: "words" | "lines"): SplitText {
 }
 
 const fns = {
+    test(el: HTMLElement){
+        getSt(el, "test");
+        let lastOut: ReturnType<typeof gsap.to> | null = null
+
+        
+        return {
+            in() {
+                const st = getSt(el, "test");
+                if (lastOut) {
+                    lastOut.kill();
+                    lastOut = null
+                }
+
+                gsap.fromTo(
+                    st.words,
+                    {
+                        opacity: 1,
+                        rotate : 5,
+                        yPercent: 120,
+                    },
+                    {
+                        rotate: 0,
+                        yPercent: 0,
+                        ease: 'power3.out',
+                        duration: 0.5,
+                        stagger: {
+                            each: 0.05, 
+                        },
+                    },
+                );
+            },
+            out(next: () => void) {
+                const st = getSt(el, "test");
+
+                gsap.to(
+                    st.words,
+                    {
+                        opacity: 0,
+                        ease: "power3.out",
+                        duration: 0.5,
+                        stagger: {
+                            each: 0.05,
+                        },
+                        onComplete() {
+                            next()
+                        },
+                    },
+                );
+            },
+        };
+    },
     words(el: HTMLElement) {
         getSt(el, "words");
 
@@ -183,7 +235,6 @@ const fns = {
 function onVisibilityChange(ent: IntersectionObserverEntry) {
     const el = ent.target as HTMLElement;
 
-    if(test==false){
     if(ent.isIntersecting) {
         const fn = el.dataset.syReveal as keyof typeof fns | undefined;
 
@@ -200,14 +251,12 @@ function onVisibilityChange(ent: IntersectionObserverEntry) {
                 toReveal[i].shouldReveal = true;
             }
         }, Math.min(toReveal.length * stagger));
-        test = false;
     } else {
         const i = toReveal.findIndex((i) => i.el === el);
         if (i >= 0 && toReveal[i].shouldReveal===false) {
             toReveal.splice(i, 1);
         }
     }
-}
 }
 
 addGlobalTicker(() => {
@@ -232,7 +281,7 @@ document.fonts.ready.then(() => {
                 elem.classList.add("is-in");
             });
 
-            elem.addEventListener('reveal-out', () => {
+            /*elem.addEventListener('reveal-out', () => {
                 if (fn) {
                     fn.out(() => {
                         elem.classList.remove("is-in");
@@ -240,7 +289,7 @@ document.fonts.ready.then(() => {
                 } else {
                     elem.classList.remove("is-in");
                 }
-            });
+            });*/
         } else {
             visibilityObserve(elem, onVisibilityChange);
         }
