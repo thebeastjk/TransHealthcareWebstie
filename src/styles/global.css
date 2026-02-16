@@ -70,6 +70,20 @@
     --breakpoint-mobile:{
         --container-offset: 1.5rem;
     };
+
+    --animate-cite: cite 2s ease-in-out 2;
+    @keyframes cite {
+        0% {
+            background: transparent;
+        }
+        50% {
+            background: yellow;
+        }
+        100% {
+            background: transparent;
+        }
+    }
+
 }
 
 html,
