@@ -76,7 +76,9 @@
     --animate-cite: cite 2s ease-in-out 2;
 
     @keyframes cite {
-        0%,
+        0% {
+            background-color: transparent;
+        }
         50% {
 
             background-color: yellow;
