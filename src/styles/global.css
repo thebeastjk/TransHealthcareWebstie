@@ -71,20 +71,37 @@
         --container-offset: 1.5rem;
     };
 
+
+
     --animate-cite: cite 2s ease-in-out 2;
+
     @keyframes cite {
-        0% {
-            background: transparent;
-        }
+        0%,
         50% {
-            background: yellow;
+
+            background-color: yellow;
         }
         100% {
-            background: transparent;
+            background-color: transparent;
         }
     }
 
+
+
 }
+
+@keyframes cite {
+    0%,
+    50% {
+
+        background-color: yellow;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+
 
 html,
 body {
@@ -195,4 +212,7 @@ button {
     --border: 1px;
     --depth: 1;
     --noise: 0;
+    --animate-cite: cite 2s ease-in-out 2;
+
+
 }

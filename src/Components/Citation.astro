@@ -28,6 +28,21 @@ const { Citations } = Astro.props;
         color: black;
 
     }
+    .active {
+        animation-name: cite;
+        animation-duration: 2s;
+        animation-iteration-count: 2;
+    }
+    @keyframes cite {
+        0%,
+        50% {
+
+            background-color: yellow;
+        }
+        100% {
+            background-color: transparent;
+        }
+    }
     .Container {
         position: relative;
     }
