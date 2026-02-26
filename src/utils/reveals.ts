@@ -100,7 +100,7 @@ const fns = {
                         ease: 'power3.out',
                         duration: 0.5,
                         stagger: {
-                            each: 0.05, 
+                            each: 0.08,
                         },
                     },
                 );

@@ -30,14 +30,25 @@ const citations = [
 <Layout title="Story" Citations={citations}>
     <div class="u-container flex flex-col content-center">
         <div class="flex-auto h-full w-full pt-40 z-2 text-center">
-            <h1 class="text-4xl font-black py-5" data-sy-reveal="words">
+            <h1 class="text-4xl font-black py-5" data-sy-reveal="lines">
                 Sofia Cano's fight for healthcare.
             </h1>
 
 
 
 
-            <span class="text-xl font-bold pl-10" data-sy-reveal="lines">5 years behind bars, 18 more to go, 6 years waiting.<InLine Citation={citations[0]} /></span>
+            <span class="text-xl font-bold pl-10">
+                <span class="inline-block" data-sy-reveal="chars">
+                    5 years behind bars,
+                </span>
+                <span class="inline-block" data-sy-reveal="chars">
+                    18 more to go,
+                </span>
+                <span class="inline-block" data-sy-reveal="chars">
+                    6 years waiting.
+                </span>
+                <InLine Citation={citations[0]} />
+            </span>
             <div class="content-center justify-center">
                 <span class="float-right">
                     <InLine Citation={citations[2]} />
