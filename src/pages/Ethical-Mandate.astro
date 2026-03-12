@@ -3,11 +3,17 @@
 import Image from "astro/components/Image.astro";
 import Layout from "../Layout/Layout.astro";
 import graph from "../assets/graph.jpg";
+import un from "../assets/UN_image.jpg"
+import InLine from "../Components/InLine.astro";
 
 const citations = [
     {
         Inline: "1",
         mla: "O’Keeffe, Lucy R., et al. “Towards Circles of Care and Education: Exploring Understandings of Quality in Early Childhood Development.” South African Journal of Childhood Education, vol. 12, no. 1, 23 May 2022, www.scielo.org.za/scielo.php?script=sci_arttext&pid=S2223-76822022000100028, https://doi.org/10.4102/sajce.v12i1.1061. Accessed 11 Mar. 2026.",
+    },
+    {
+        Inline: "2",
+        mla: "“Pride Month: UN’s Transgender Rights Campaign Goes Global | UN News.” News.un.org, 30 June 2023, news.un.org/en/story/2023/06/1138277.",
     }
 ]
 ---
@@ -21,42 +27,95 @@ const citations = [
             </h1>
             <div class="content-center justify-center items-center flex flex-col ">
 
-                <p class="text-lg px-8 py-4">
-                    Ethical Mandate: The lack of healthcare access for trans people actively hurts those people by requiring them to forgo important healthcare that is needed to live a fulfilling life. Therefore that lack of healthcare access is wrong.
+                <p class="text-lg font-bold px-8 py-4">
+                    The lack of healthcare access for trans people actively hurts those people by requiring them to forgo important healthcare that is needed to live a fulfilling life. Therefore that lack of healthcare access is wrong.
                 </p>
-                <p class="text-lg px-8 py-4">
-                    Introduction: We will attempt to prove that the lack of healthcare access hurts trans people. This is clear through the effects that lack has, but will be further proved through the use of ethical frameworks and arguments which demonstrate the harm that this lack of access inflicts upon trans people. Lack of healthcare access can be proven to be a denial of the human rights of the people who lose access through the definition of human rights given by the United Nations.
+                <p class="text-lg px-8 pt-4 pb-8">
+                    We will attempt to prove that the lack of healthcare access hurts trans people. This is clear through the effects that lack has, but will be further proved through the use of ethical frameworks and arguments which demonstrate the harm that this lack of access inflicts upon trans people. Lack of healthcare access can be proven to be a denial of the human rights of the people who lose access through the definition of human rights given by the United Nations.
                 </p>
-                <p class="text-lg px-8 py-4">
-                    Definition of Personhood: The definition of personhood which we will use is the sentient definition or the cognitive definition.
 
-                    Sentient definition: Youre a person if you can feel pleasure and pain.
-                    Cognitive definition: Youre a person if you are conscious and self aware.                    
-                </p>
-                <p class="text-lg px-8 py-4">
-                    UN Declaration: Following World War II, the United Nations was created to attempt to sustain peace throughout the world. As a part of this, they wanted to create a definition of certain rights which could not be denied to any person. Because of this, they created the UN Declaration of Human Rights, which is supposed to guarantee all rights within it to all people. Though it has been passed within the U.N., and many countries have agreed to it, many countries continue to have human rights violations. This is because the U.N. declaration is not law, and does not actually hold any power. Despite this, we believe that there are a few articles that apply from the UN Declaration to our social justice issue.
+                <div class="collapse collapse-arrow bg-base-100 border-base-300 bg-transparent border">
+                    <input type="checkbox" />
+                    <div class="collapse-title font-semibold">Definition of Personhood</div>
+                    <div class="collapse-content text-sm">
+                        <p class="text-lg px-16 py-4">
+                            The definition of personhood which we will use is the sentient definition or the cognitive definition. This has been included to definitely prove that all trans people must be considered people.
 
-                    Article 7 states that no person can be discriminated against under the law for any reason. All laws must be equally applicable to all people. In this way, the continual discrimination against trans people in law and in life violates their human rights. Many laws specifically call out trans people, which discriminate against them and cause harm against them. Such action violates the human rights of trans people.
-                    
-                    Article 25 says that everyone has the right to a good standard of life. This includes adequate well-being and medical-care, which applies to our issue most obviously because it's about healthcare. We argue that transgender struggles and gender-affirming care is necessary to the well-being of many transgender people because of the negative mental and physical effects that come from gender dysphoria. Gender dysphoria is the disconnect between perceived and presenting gender, which can lead to severe negative mental effects that are present in the high number of suicides in transgender people compared to others. 
-                    
-                </p>
-                <p class="text-lg px-8 py-4">
-                    We chose Rita Manning as our Philosopher, whose work centers around the philosophy of Care ethics. Care ethics states that we should provide care to all people in our interpersonal relationships, and furthermore that we should extend our circles of care broader than they currently are. It is highly supportive of empathy and taking actions to reduce harms within our local community or around us in order to care for others.
-                </p>
-                <Image src={graph} alt="inline image" class="h-70 w-96 object-contain px-4"/>
-                <p class="text-lg px-8 py-4">
-                    Within this framework, it is clear that we have a responsibility to provide every person in our community with the ability to live a good and stable life. Additionally, we have a responsibility to address any harms within the community, and provide empathy to all those affected. A large part of this empathy is taking the perspective of the other person. This will allow us to understand where someone is coming from, and what their perspective is. By expanding our circles of care, we do these things to more people, and provide care to more and more people.
-                </p>
-                <p class="text-lg px-8 py-4">
-                    Expanding our circles of care includes expanding it to those who are transgender. Though you may not directly know a trans person, you very likely know someone else who knows someone who is trans. Thus, through our expanding circles of care, we must provide care for those trans people too. We are thus responsible to address any harms done to trans people, and provide empathy to them. We must listen to the perspectives of trans people, and take the time to understand how they feel and their lived experiences.
-                </p>
-                <p class="text-lg px-8 py-4">
-                    With these expectations and requirements set, it’s thus important to discuss the issue of healthcare. Healthcare is an important part of modern life, and is needed to provide a full and healthy life to all people. Stable healthcare allows people to live their lives to a fuller extent than someone without healthcare. Therefore, it is especially important that within our care is healthcare, and that said healthcare is stable and as helpful as possible. Healthcare with large issues or problems could end up hurting someone more than it helps.
-                </p>
-                <p class="text-lg px-8 py-4">
-                    To connect this all together, the framework we are using requires us to extend our circles of care, which would require us to extend our care to trans people as well. Since healthcare and the ability to live a good life is an important part of providing care, these need to also be expanded to trans people too.
-                </p>
+                            <div class="px-20">
+                                <div class="collapse bg-white/25 bg-base-100 border-base-300 border">
+                                    <input type="checkbox" />
+                                    <div class="collapse-title font-semibold">Sentient definition</div>
+                                    <div class="collapse-content text-sm">
+                                        <p>
+                                            You're a person if you can feel pleasure and pain.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div  class="collapse bg-white/25 bg-base-100 border-base-300 border">
+                                    <input type="checkbox" />
+                                    <div class="collapse-title font-semibold">Cognitive definition</div>
+                                    <div class="collapse-content text-sm">
+                                        <p>
+                                            You're a person if you are conscious and self aware.
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+
+
+
+                <div class="py-8">
+                    <div class="mockup-browser border bg-white/50 border-base-300 w-full">
+                        <div class="mockup-browser-toolbar">
+                            <div class="input bg-transparent border-4 border-white/30 items-center">https://www.un.org/en/</div>
+                        </div>
+                        <div class="grid place-content-center items-center">
+
+                            <Image src={un} alt="inline image" class="h-60 w-full object-contain px-4"/>
+                            <p class="pt-2 text-sm font-light">Trans people celebrating the U.N. declaration of transgender rights <InLine Citation={citations[1]} /></p>
+
+
+                            <p class="text-lg px-16 pt-4 pb-4">
+
+                                Following World War II, the United Nations was created to attempt to sustain peace throughout the world. As a part of this, they wanted to create a definition of certain rights which could not be denied to any person. Because of this, they created the UN Declaration of Human Rights, which is supposed to guarantee all rights within it to all people. Though it has been passed within the U.N., and many countries have agreed to it, many countries continue to have human rights violations. This is because the U.N. declaration is not law, and does not actually hold any power. Despite this, we believe that there are a few articles that apply from the UN Declaration to our social justice issue.
+                            </p>
+                            <p class="text-lg px-16 pb-4">
+                                Article 7 states that no person can be discriminated against under the law for any reason. All laws must be equally applicable to all people. In this way, the continual discrimination against trans people in law and in life violates their human rights. Many laws specifically call out trans people, which discriminate against them and cause harm against them. Such action violates the human rights of trans people.
+                            </p>
+                            <p class="text-lg px-16 pb-8">
+                                Article 25 says that everyone has the right to a good standard of life. This includes adequate well-being and medical-care, which applies to our issue most obviously because it's about healthcare. We argue that transgender struggles and gender-affirming care is necessary to the well-being of many transgender people because of the negative mental and physical effects that come from gender dysphoria. Gender dysphoria is the disconnect between perceived and presenting gender, which can lead to severe negative mental effects that are present in the high number of suicides in transgender people compared to others.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-8 items-center place-content-center bg-pink-300/50 rounded-2xl border-2">
+                    <h1 class="pt-8 text-2xl font-bold">
+                        Our Argument
+                    </h1>
+
+                    <p class="text-lg px-8 py-4">
+                        We chose Rita Manning as our Philosopher, whose work centers around the philosophy of Care ethics. Care ethics states that we should provide care to all people in our interpersonal relationships, and furthermore that we should extend our circles of care broader than they currently are. It is highly supportive of empathy and taking actions to reduce harms within our local community or around us in order to care for others.
+                    </p>
+                    <Image src={graph} alt="inline image" class="h-70 w-full object-contain px-4"/>
+                    <InLine Citation={citations[0]} />
+                    <p class="text-lg px-8 py-4">
+                        Within this framework, it is clear that we have a responsibility to provide every person in our community with the ability to live a good and stable life. Additionally, we have a responsibility to address any harms within the community, and provide empathy to all those affected. A large part of this empathy is taking the perspective of the other person. This will allow us to understand where someone is coming from, and what their perspective is. By expanding our circles of care, we do these things to more people, and provide care to more and more people.
+                    </p>
+                    <p class="text-lg px-8 py-4">
+                        Expanding our circles of care includes expanding it to those who are transgender. Though you may not directly know a trans person, you very likely know someone else who knows someone who is trans. Thus, through our expanding circles of care, we must provide care for those trans people too. We are thus responsible to address any harms done to trans people, and provide empathy to them. We must listen to the perspectives of trans people, and take the time to understand how they feel and their lived experiences.
+                    </p>
+                    <p class="text-lg px-8 py-4">
+                        With these expectations and requirements set, it’s thus important to discuss the issue of healthcare. Healthcare is an important part of modern life, and is needed to provide a full and healthy life to all people. Stable healthcare allows people to live their lives to a fuller extent than someone without healthcare. Therefore, it is especially important that within our care is healthcare, and that said healthcare is stable and as helpful as possible. Healthcare with large issues or problems could end up hurting someone more than it helps.
+                    </p>
+                    <p class="text-lg px-8 pt-4 pb-8">
+                        To connect this all together, the framework we are using requires us to extend our circles of care, which would require us to extend our care to trans people as well. Since healthcare and the ability to live a good life is an important part of providing care, these need to also be expanded to trans people too.
+                    </p>
+                </div>
             </div>
         </div>
 
