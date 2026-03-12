@@ -1,11 +1,13 @@
 ---
 
+import Image from "astro/components/Image.astro";
 import Layout from "../Layout/Layout.astro";
+import graph from "../assets/graph.jpg";
 
 const citations = [
     {
-        Inline: "",
-        mla: "",
+        Inline: "1",
+        mla: "O’Keeffe, Lucy R., et al. “Towards Circles of Care and Education: Exploring Understandings of Quality in Early Childhood Development.” South African Journal of Childhood Education, vol. 12, no. 1, 23 May 2022, www.scielo.org.za/scielo.php?script=sci_arttext&pid=S2223-76822022000100028, https://doi.org/10.4102/sajce.v12i1.1061. Accessed 11 Mar. 2026.",
     }
 ]
 ---
@@ -17,10 +19,13 @@ const citations = [
             <h1 class="text-4xl font-black py-5" data-sy-reveal="Chars">
                 Ethical Mandate
             </h1>
-            <div class="content-center justify-center flex flex-col ">
+            <div class="content-center justify-center items-center flex flex-col ">
+
                 <p class="text-lg px-8 py-4">
+
                     We chose Rita Manning as our Philosopher, whose work centers around the philosophy of Care ethics. Care ethics states that we should provide care to all people in our interpersonal relationships, and furthermore that we should extend our circles of care broader than they currently are. It is highly supportive of empathy and taking actions to reduce harms within our local community or around us in order to care for others.
                 </p>
+                <Image src={graph} alt="inline image" class="h-70 w-96 object-contain px-4"/>
                 <p class="text-lg px-8 py-4">
                     Within this framework, it is clear that we have a responsibility to provide every person in our community with the ability to live a good and stable life. Additionally, we have a responsibility to address any harms within the community, and provide empathy to all those affected. A large part of this empathy is taking the perspective of the other person. This will allow us to understand where someone is coming from, and what their perspective is. By expanding our circles of care, we do these things to more people, and provide care to more and more people.
                 </p>
