@@ -1,2 +1,2 @@
 User-agent: * # match all bots
-Disallow: /TransHealthcareWebstie/404 # keep them out
+Disallow: / # keep them out
