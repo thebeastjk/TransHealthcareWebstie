@@ -1,0 +1,15 @@
+{
+  "short_name": "TPW",
+  "name": "The Pain of Waiting",
+  "icons": [
+    {
+      "src": "/TransHealthcareWebstie/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/ico"
+    },
+  ],
+  "start_url": "/TransHealthcareWebstie/",
+  "display": "standalone",
+  "theme_color": "blue",
+  "background_color": "white"
+}

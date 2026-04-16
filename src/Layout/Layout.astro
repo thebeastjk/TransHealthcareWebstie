@@ -6,6 +6,7 @@ import SmoothScroll from "../Components/SmoothScroll.astro";
 import { useTranslations } from "../i18n/utils";
 import "../styles/global.css"
 import Citation from "../Components/Citation.astro";
+import { SEO } from "astro-seo";
 
 const { title } = Astro.props
 const t = useTranslations();
@@ -18,23 +19,40 @@ const links = [
     { title: 'Facts', url: '/TransHealthcareWebstie/Facts' },
 ];
 
+import faviconSvgSrc from '../assets/tflag.svg'
+import {getImage} from "astro/assets";
+
 interface Props {
     Citations: Cite[],
 }
 
 const { Citations } = Astro.props;
 const data = Astro.locals;
+
 ---
 
 
 <html lang="en">
     <head>
+        <SEO
+            title="The Pain of Waiting"
+            description="A website built for information about the struggles of trans healthcare in the U.S. south."
+            extend={{
+                // extending the default link tags
+                link: [{ rel: "icon", href: "/TransHealthcareWebstie/favicon.ico" }],
+                            // extending the default meta tags
+            }}
+        />
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <Font cssVariable="--font-roboto-slab" preload />
         <Font cssVariable="--font-inter" preload />
         <title>{title + " - The Pain of Waiting"}</title>
         <link href="../styles/output.css" rel="stylesheet">
+        <link rel="icon" href="/TransHealthcareWebstie/favicon.ico" sizes="32x32"/>
+        <link rel="manifest" href="/TransHealthcareWebstie/site.webmanifest" />
+
+
     </head>
     <body>
         <a href = "#main" class="skip-link">{t("accessibility.skip-to-content")}</a>
