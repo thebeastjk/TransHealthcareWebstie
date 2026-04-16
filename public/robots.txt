@@ -1,2 +1,4 @@
 User-agent: * # match all bots
-Disallow: / # keep them out
+
+
+Sitemap: https://thebeastjk.github.io/TransHealthcareWebstie/sitemap.xml
