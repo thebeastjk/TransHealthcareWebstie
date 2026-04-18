@@ -1,9 +1,30 @@
 ---
 import Layout from "../Layout/Layout.astro";
+import Image from "astro/components/Image.astro";
+import BillMap from "../assets/BillMap.png";
+import TransKnight from "../assets/TransKnight.jpg";
+import InLine from "../Components/InLine.astro";
+import Crowd from "../assets/Crowd.jpg";
 const citations = [
     {
-        Inline: "",
-        mla: ""
+        Inline: "1",
+        mla: "Translegislation.Com, 2026, https://translegislation.com/. Accessed 18 Apr. 2026. ‌"
+    },
+    {
+        Inline: "2",
+        mla: "“Human Knights.” Mltshp, Sept. 2025, https://mltshp.com/p/1R8X0. Accessed 18 Apr. 2026. ‌"
+    },
+    {
+        Inline: "3",
+        mla: "“Seven Themes of Catholic Social Teaching | USCCB.” USCCB.org, 2021, www.usccb.org/beliefs-and-teachings/what-we-believe/catholic-social-teaching/seven-themes-of-catholic-social-teaching. Accessed 15 Mar. 2021.\n"
+    },
+    {
+        Inline: "4",
+        mla: "“Bible Gateway Passage: Matthew 5:9-11 - New International Version.” Bible Gateway, 2019, https://www.biblegateway.com/passage/?search=Matthew%205%3A9-11&version=NIV. Accessed 18 Apr. 2026.‌"
+    },
+    {
+        Inline: "5",
+        mla: "“Unbreakable Pride - SF LGBT Center.” SF LGBT Center, 26 Nov. 2024, https://www.sfcenter.org/pride-2023/. Accessed 18 Apr. 2026.‌"
     }
 ]
 ---
@@ -65,9 +86,11 @@ const citations = [
                         <div class="flex px-2">
                             <span class="bg-black h-full w-0.5"/>
                         </div>
-                        <p class="h-full text-xl">
-                            Happy are the ones prosecuted because of justice, since theirs is the kingdom of heaven.
+                        <p class="h-full text-l">
+                            Blessed are those who are persecuted because of righteousness,
+                            for theirs is the kingdom of heaven.
                         </p>
+                        <InLine Citation={citations[3]} />
                     </div>
                     <p class="py-4">
                     Those who are prosecuted because of “justice” are those being harassed and prosecuted for false reasons or for who they are.
@@ -76,6 +99,13 @@ const citations = [
                     Ironically, they are being unfairly prosecuted by people who claim to be seeking justice, being specifically targeted by bills restricting access to healthcare,
                     education, legal recognition, and many other aspects of life.
 
+                    </p>
+                    <div class="flex flex-row w-full place-content-center justify-center text-center">
+                        <Image src={BillMap} alt="BillMap" class="place-content-center h-1/2 object-contain" height="500"/>
+                        <InLine Citation={citations[0]} />
+                    </div>
+                    <p class="py-2 text-sm">
+                        A map of the proposed and passed anti-trans bills in 2026 alone.
                     </p>
                 </div>
                 <div class="py-4 w-full  flex flex-col place-content-center rounded-2xl">
@@ -88,10 +118,17 @@ const citations = [
                     <p class="p-4">
                         Catholic Social Teaching outlines the numerous obligations and responsibilities that we owe to each other like helping the poor and advocating for just laws.
                     </p>
+
                     <p class="pb-4 px-4" >
 
                         Human rights must be preserved. Everyone has a right to live and a right to live well. One of the requirements for this is healthcare. We must therefore provide healthcare to all people, including trans people. Trans people have the rights as everyone else.
-                        IMAGE
+                    </p>
+                    <div class="flex flex-row w-full place-content-center justify-center text-center">
+                        <Image src={TransKnight} alt="TransKnight" class="place-content-center h-1/2 object-contain" height="500"/>
+                        <InLine Citation={citations[1]} />
+                    </div>
+                    <p class="py-2 text-sm">
+                        This photo demonstrates the need to fight constantly in order to remind people that trans people are people and they deserve human rights.
                     </p>
                 </div>
                 <div class="py-4 w-full  flex flex-col place-content-center rounded-2xl">
@@ -101,20 +138,27 @@ const citations = [
                     <div class="flex w-full px-15">
                         <span class="bg-black w-full h-0.5"/>
                     </div>
-                    <p class="p-4">
-                        Human life is sacred and that the dignity of the human person is the foundation of a moral vision for society.
-                        Our belief in the sanctity of human life and the inherent dignity of the human person is the foundation of all the principles of our social teaching.
-                        We believe that every person is precious, that people are more important than things, and that the measure of every institution is whether it threatens
-                        or enhances the life and dignity of the human person.
-                    </p>
-                    <p class="pb-4 px-4" >
-
-
-
-                        IMAGE
-                    </p>
+                    <div class="flex flex-row w-full place-content-center justify-center text-center px-8 py-4">
+                        <h1 class="text-2xl font-bold ">
+                            "
+                        </h1>
+                        <div class="flex px-2">
+                            <span class="bg-black h-full w-0.5"/>
+                        </div>
+                        <p class="h-full text-l">
+                            Human life is sacred and that the dignity of the human person is the foundation of a moral vision for society.
+                            Our belief in the sanctity of human life and the inherent dignity of the human person is the foundation of all the principles of our social teaching.
+                            We believe that every person is precious, that people are more important than things,
+                            and that the measure of every institution is whether it threatens or enhances the life and dignity of the human person.
+                        </p>
+                        <InLine Citation={citations[2]} />
+                    </div>
+                    <div class="flex flex-row w-full place-content-center justify-center text-center">
+                        <Image src={Crowd} alt="A crowd of protestors" class="place-content-center h-1/2 object-contain" height="300"/>
+                        <InLine Citation={citations[4]} />
+                    </div>
                 </div>
-                <div class="border-2 rounded-2xl bg-pink-300/50 p-4">
+                <div class="border-2 rounded-2xl bg-pink-300/50 p-4 w-5/6">
                     <p class="py-4">
                         Trans people are humans and logically deserve the same dignity and well treatment as any other humans;
                         however, the prevention of the healthcare needed to live their lives fulfilling threatens the life and dignity of the trans people who are being prevented.
@@ -126,6 +170,7 @@ const citations = [
                         like them or allies in order to get the support they need. Furthermore, solidarity is needed in order to gather enough people to make change in
                         communities so that trans people can get the support and healthcare they deserve.
                     </p>
+
                 </div>
             </div>
         </div>
