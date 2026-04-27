@@ -1,3 +1,69 @@
 ---
-
+import Layout from "../Layout/Layout.astro";
+const citations = [
+    {
+        Inline: "1",
+        mla: ""
+    },
+]
 ---
+<Layout  title="Theological Mandate" Citations={citations}>
+    <div class="u-container flex flex-col content-center">
+        <div class="flex-auto h-full w-full pt-40 z-2 text-center">
+            <h1 class="text-4xl font-black py-5" data-sy-reveal="Chars">
+                Interview
+            </h1>
+            <div class="content-center justify-center items-center flex flex-col">
+                <p class="w-3/4 font-bold text-lg p-4">
+                    As part of our research, we wanted to interview someone who would know more about this issue than we would.
+                    We picked (name), and scheduled a call with them. Below you will find that call, as well as a transcript of that call and
+                    a biography of them.
+                </p>
+
+                <div class="flex w-full flex-col gap-4 content-center place-content-center ">
+                    <div class="skeleton h-120 w-full  rounded-3xl anattempt"></div>
+                    <div class="skeleton h-4 w-28 anattempt"></div>
+                    <div class="skeleton h-4 w-full anattempt"></div>
+                    <div class="skeleton h-4 w-full anattempt"></div>
+                    <p class="w-full font-thin text-sm px-4 text-center">
+                        These will never load, it's just a placeholder
+                    </p>
+                </div>
+                <div class="flex flex-col py-4 w-full items-center">
+                    <span class="w-3/4 h-1 bg-black/50 rounded-2xl" />
+                </div>
+                <div class="flex flex-col gap-4 content-center place-content-center py-8">
+                    <h1 class="text-xl font-bold ">
+                        An introduction:
+                    </h1>
+                    <p class="px-8">
+                        ___ is a ___, they have been working in trans healthcare for ___ years and have much experience with the trans healthcare process.
+                        They’ve seen the challenges that trans people face when attempting to get healthcare, and have chosen to do ___ in order to help them.
+                    </p>
+                    <h1 class="text-xl font-bold">
+                        Bio:
+                    </h1>
+                    <p class="px-8">
+                        Born in ____, they began to ___ at ____. In ____ they began to work in trans medicine, and have continued until today. (other details)
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</Layout>
+
+
+<style>
+    .anattempt{
+        background-image: linear-gradient(
+                105deg,
+                #0000 0% 40%,
+                #FFFFFF 50%,
+                #0000 60% 100%
+        );
+        background-color: lightgrey;
+        opacity: .5;
+    }
+</style>
