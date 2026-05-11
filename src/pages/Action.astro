@@ -1,3 +1,72 @@
 ---
 
+import Layout from "../Layout/Layout.astro";
+const citations = [
+    {
+        Inline: "1",
+        mla: ""
+    },
+]
 ---
+
+
+<Layout  title="Theological Mandate" Citations={citations}>
+    <div class="u-container flex flex-col content-center">
+        <div class="flex-auto h-full w-full pt-40 z-2 text-center">
+            <h1 class="text-4xl font-black py-5" data-sy-reveal="Chars">
+                Disruptive action
+            </h1>
+            <div class="content-center justify-center items-center flex flex-col">
+                <p class="w-3/4 font-bold text-lg p-4">
+                    Our argument has been long and winding so far, and we should summarize.
+                </p>
+                <div class="grid grid-flow-row gap-4 items-center place-content-center py-4">
+                    <div class="bg-pink-300 rounded-lg border-2 py-4 px-6 items-center w-3/4 place-self-center">
+                        <p class="pb-4">
+                            Our main premise:
+                        </p>
+                        <div class="items-center">
+                            <p class="text-left">
+
+                                1. If the lack of healthcare access for trans people negatively affects those people, that lack of access is wrong.
+                            </p>
+                            <p class="text-left">
+                                2. The lack of healthcare access for trans people negatively affects trans people.
+                            </p>
+                            <p class="text-left">
+                                C. Therefore that lack of access is wrong.
+                            </p>
+                        </div>
+                    </div>
+                    <p class="pt-4 w-7/8 place-self-center">
+                        In other words, the lack of healthcare access for trans people actively hurts those people by requiring them to forgo important healthcare that
+                        is needed to live a fulfilling life. In the American South,
+                        there exists a bias and prejudice against transgender people that manifests in the form of a lack of healthcare resources for those transgender people,
+                        caused by a number of factors like harmful legislation, reduction of resource providers,
+                        and a dangerous political climate. This has lead to a significant negative impact on the mental and physical health of the transgender people affected,
+                        seen through high rates of suicide and violence toward transgender people.
+                    </p>
+                    <p>
+                        In the ethical mandate, the framework we used required us to extend our circles of care,
+                        which would require us to extend our care to trans people as well.
+                        Since healthcare and the ability to live a good life is an important part of providing care, these need to also be expanded to trans people too.
+                    </p>
+                    <div class="py-2"/>
+                    <div  class="collapse collapse-arrow bg-white/25 bg-base-100 border-base-300 border">
+                        <input type="checkbox" />
+                        <div class="collapse-title font-semibold">Sofia Cano</div>
+                        <div class="collapse-content text-sm w-3/4 place-self-center">
+                            <p class="">
+                                Sofia Cano is suffering because of the system under which she lives. Not just the prison,
+                                but the state and country as well. This is not something easily helped with charity.
+                                Though it is possible to help the efforts of organizations like the ACLU,
+                                it’s more important to try and convince the people in charge. This can be done through activism, not just through money.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
