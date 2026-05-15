@@ -5,10 +5,11 @@ import before from "../assets/Before.jpg";
 import after from "../assets/After.jpg";
 import solution from "../assets/IMG_0240.jpg";
 import Image from "astro/components/Image.astro";
+import InLine from "../Components/InLine.astro";
 const citations = [
     {
-        Inline: "Ignore me",
-        mla: ""
+        Inline: "1",
+        mla: "Knapp & Huang, Image, 2026"
     },
 ]
 ---
@@ -67,8 +68,8 @@ const citations = [
                         Furthermore, solidarity is needed in order to gather enough people to make change in communities so that trans people can
                         get the support and healthcare they deserve.
                     </p>
-                    <div class="flex w-fit self-center pt-8">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ee4fyqk997s?si=tVFcNCqZRQR2Gkrg&amp;start=366&end=406" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="z-10 self-center"></iframe>                
+                    <div class="flex w-full place-content-center self-center items-center pt-8">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ee4fyqk997s?si=tVFcNCqZRQR2Gkrg&amp;start=366&end=406" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="z-10 self-center" />
                     </div>
                     <div class="py-2"/>
                     <div  class="collapse collapse-arrow bg-white/25 bg-base-100 border-base-300 border">
@@ -227,6 +228,7 @@ const citations = [
                             </div>
                             <div class="diff-resizer place-self-end"></div>
                         </figure>
+                        <InLine Citation={citations[0]} />
                         <p class="text-sm">
                             The images above demonstrate the culling process.
                         </p>
@@ -237,8 +239,10 @@ const citations = [
                                 The Solution
                             </h1>
                             <span class="w-1/8 h-1 bg-black/50 rounded-2xl self-center" />
+                            <Image src={solution} alt="solution image" class="object-contain self-center w-150 py-4" />
+                            <InLine Citation={citations[0]} />
                         </div>
-                        <Image src={solution} alt="solution image" class="object-contain self-center w-150 h-150" />
+
                         <p class="w-7/8 self-center">
                             
                             Our solution that we prototyped was creating more required classes for doctors and healthcare providers that specifically
