@@ -1,6 +1,9 @@
 ---
 
 import Layout from "../Layout/Layout.astro";
+import before from "../assets/Before.jpg";
+import after from "../assets/After.jpg";
+import Image from "astro/components/Image.astro";
 const citations = [
     {
         Inline: "1",
@@ -13,15 +16,15 @@ const citations = [
 <Layout  title="Theological Mandate" Citations={citations}>
     <div class="u-container flex flex-col content-center">
         <div class="flex-auto h-full w-full pt-40 z-2 text-center">
-            <h1 class="text-4xl font-black py-5" data-sy-reveal="Chars">
+            <h1 class="text-4xl font-black py-5" data-sy-reveal="chars">
                 Disruptive action
             </h1>
             <div class="content-center justify-center items-center flex flex-col">
-                <p class="w-3/4 font-bold text-lg p-4">
+                <p class="w-3/4 font-bold text-lg p-4" data-sy-reveal="words">
                     Our argument has been long and winding so far, and we should summarize.
                 </p>
                 <div class="grid grid-flow-row gap-4 items-center place-content-center py-4">
-                    <div class="bg-pink-300 rounded-lg border-2 py-4 px-6 items-center w-3/4 place-self-center">
+                    <div class="bg-red-300 rounded-lg border-2 py-4 px-6 items-center w-3/4 place-self-center">
                         <p class="pb-4">
                             Our main premise:
                         </p>
@@ -51,6 +54,18 @@ const citations = [
                         which would require us to extend our care to trans people as well.
                         Since healthcare and the ability to live a good life is an important part of providing care, these need to also be expanded to trans people too.
                     </p>
+                    <p>
+                        Throughout our theological mandate, it was proved that trans people deserve the same dignity and well treatment as any other humans.
+                        The prevention of the healthcare needed to live their lives fulfilling threatens the life and dignity of trans people.
+                    </p>
+                    <p>
+                        We need to keep Solidarity with these trans people to restore their dignity that is being violated.
+                        It is important because there are physical needs to be met like food and shelter,
+                        but also mental ones like being able to converse with others and have a connection with that.
+                        For transgender people in the South, a lot of institutions and safety nets in place do not apply to the problems they face.
+                        Furthermore, solidarity is needed in order to gather enough people to make change in communities so that trans people can
+                        get the support and healthcare they deserve.
+                    </p>
                     <div class="py-2"/>
                     <div  class="collapse collapse-arrow bg-white/25 bg-base-100 border-base-300 border">
                         <input type="checkbox" />
@@ -65,7 +80,183 @@ const citations = [
 
                         </div>
                     </div>
+                    <div class="flex flex-col w-full items-center">
+                        <h1 class="text-xl font-bold pt-4" data-sy-reveal="chars">
+                            5 why analysis
+                        </h1>
+                        <span class="w-1/8 h-1 bg-black/50 rounded-2xl self-center" />
+                    </div>
                 </div>
+                <div class="py-8 flex">
+                    <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+                        <li>
+                            <div class="timeline-middle">
+                                <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                        class="h-5 w-5"
+                                >
+                                    <path
+                                            fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                                            clip-rule="evenodd"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="timeline-start mb-10 md:text-end scroll-m-40 target:animate-cite rounded-l">
+                                <time class="font-mono italic">Why #1</time>
+                                <div class="text-lg font-black leading-none pb-2 flex flex-row items-center target:animate-cite" data-sy-reveal="lines">The system is not allowing Cano to complete her transition, and actively disrespects her identity because the prison is enacting new policies against trans people.</div>
+                            </div>
+                            <hr />
+                        </li>
+                        <li>
+                            <hr />
+                            <div class="timeline-middle">
+                                <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                        class="h-5 w-5"
+                                >
+                                    <path
+                                            fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                                            clip-rule="evenodd"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="timeline-end md:mb-10 scroll-m-40 target:animate-cite rounded-l" >
+                                <div class="w-fit self-start"><time class="font-mono italic text-left">Why #2</time></div>
+                                <div class="text-lg text-left font-black leading-none pb-2 flex flex-row items-center target:animate-cite" data-sy-reveal="lines">This is because of a South Carolina house bill (4624) which was passed.</div>
+                            </div>
+                            <hr />
+                        </li>
+                        <li>
+                            <div class="timeline-middle">
+                                <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                        class="h-5 w-5"
+                                >
+                                    <path
+                                            fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                                            clip-rule="evenodd"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="timeline-start mb-10 md:text-end scroll-m-40 target:animate-cite rounded-l">
+                                <time class="font-mono italic">Why #3</time>
+                                <div class="text-lg font-black leading-none pb-2 flex flex-row items-center target:animate-cite" data-sy-reveal="lines">This law bans medically necessary healthcare for trans youth, and the use of public funds for trans patients.</div>
+                            </div>
+                            <hr />
+                        </li>
+                        <li>
+                            <hr />
+                            <div class="timeline-middle">
+                                <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                        class="h-5 w-5"
+                                >
+                                    <path
+                                            fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                                            clip-rule="evenodd"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="timeline-end md:mb-10 scroll-m-40 target:animate-cite rounded-l" >
+                                <div class="w-fit self-start"><time class="font-mono italic text-left">Why #4</time></div>
+                                <div class="text-lg text-left font-black leading-none pb-2 flex flex-row items-center target:animate-cite" data-sy-reveal="lines">Lawmakers like Thomas Beach and Nancy Mace are behind this bill, because of their misinformed beliefs about trans people.</div>
+                            </div>
+                            <hr />
+                        </li>
+                        <li>
+                            <hr />
+                            <div class="timeline-middle">
+                                <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                        class="h-5 w-5"
+                                >
+                                    <path
+                                            fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                                            clip-rule="evenodd"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="timeline-start mb-10 md:text-end scroll-m-40 target:animate-cite rounded-l" id="source7">
+                                <time class="font-mono italic">Why #5</time>
+                                <div class="text-lg text-right font-black leading-none pb-2 flex flex-row items-center target:animate-cite" data-sy-reveal="lines">These beliefs are caused by a lack of information about the medical necessity of transition.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex flex-col w-full items-center">
+                        <h1 class="text-xl font-bold pt-4" data-sy-reveal="chars">
+                            Design thinking
+                        </h1>
+                        <span class="w-1/8 h-1 bg-black/50 rounded-2xl self-center" />
+                    </div>
+                    <p class="py-4">
+                        The design thinking process we used had us graphing a bunch of different ideas which our group had on a graph of ease of implementation vs impact.
+                        Our question was how we might organize more public resources for healthcare providers and the general public to learn about trans people and their needs.
+                    </p>
+                    <div class="px-24 place-content-center self-center">
+                        <figure class="diff aspect-3/4 rounded-2xl" tabindex="0">
+                            <div class="diff-item-1" role="img" tabindex="0">
+                                <div class="bg-primary text-primary-content grid place-content-center text-9xl font-black">
+                                    <Image src={before} alt="before image" class="object-contain"/>
+                                </div>
+                            </div>
+                            <div class="diff-item-2" role="img">
+                                <div class="bg-base-200 grid place-content-center text-9xl font-black">
+                                    <Image src={after} alt="before image" class="object-contain"/>
+                                </div>
+                            </div>
+                            <div class="diff-resizer place-self-end"></div>
+                        </figure>
+                        <p class="text-sm">
+                            The images above demonstrate the culling process.
+                        </p>
+                    </div>
+                    <div class="py-8 flex flex-col gap-4">
+                        <div class="flex flex-col w-full items-center">
+                            <h1 class="text-xl font-bold pt-4" data-sy-reveal="chars">
+                                The Solution
+                            </h1>
+                            <span class="w-1/8 h-1 bg-black/50 rounded-2xl self-center" />
+                        </div>
+                        <p class="w-7/8 self-center">
+                            Our solution that we prototyped was creating more required classes for doctors and healthcare providers that specifically
+                            educated them on caring for trans patients. Many trans people struggle to find healthcare environments that can properly
+                            care for them and that they can feel safe because people are unaware of how to treat them right. This is also why a big part
+                            of the solution is having doctors work with transgender patients to develop these classes, and have their input on the issue.
+                            Historically, a lot of decisions about legality of transition, treatment of patients, and insurance coverage are made without
+                            any input from transgender people. This has led to a lot of the abuses that we see in the healthcare system like a lack of coverage
+                            for life-saving gender-affirming care and a lot of arbitrary bureaucracy that trans people need to go through in order to get gender-affirming care.
+                            Getting trans people involved with this solution excites us the most, as it not only helps address the healthcare issues they face but
+                            also allows them to have a voice and an impact in a place where they have historically been ignored or abused.
+                        </p>
+                        <p class="w-7/8 self-center">
+                            Success with this solution would look like trans people being able to receive the proper care and understanding
+                            from healthcare advisors without feeling like those providers were uneducated on those issues.
+                            It would mean that they would feel safe to be themselves and be treated as the gender they chose,
+                            rather than having to clarify and keep advocating for themselves just for people to use the right pronouns.
+                            It would mean that the healthcare system as a whole would work to support and facilitate their transition rather
+                            than setting up more hurdles like inconsistent prescription access and direct denial of gender affirming care on
+                            discretion of the healthcare providers that trans people go through in order to receive healthcare.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
