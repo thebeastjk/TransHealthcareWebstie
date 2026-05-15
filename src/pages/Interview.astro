@@ -1,51 +1,169 @@
 ---
 import Layout from "../Layout/Layout.astro";
+import InLine from "../Components/InLine.astro";
 const citations = [
     {
         Inline: "1",
-        mla: ""
+        mla: "https://www.t4tcaregiving.org/"
     },
 ]
 ---
 <Layout  title="Theological Mandate" Citations={citations}>
     <div class="u-container flex flex-col content-center">
         <div class="flex-auto h-full w-full pt-40 z-2 text-center">
-            <h1 class="text-4xl font-black py-5" data-sy-reveal="Chars">
+            <h1 class="text-4xl font-black py-5" data-sy-reveal="chars">
                 Interview
             </h1>
             <div class="content-center justify-center items-center flex flex-col">
-                <p class="w-3/4 font-bold text-lg p-4">
-                    As part of our research, we wanted to interview someone who would know more about this issue than we would.
-                    We picked (name), and scheduled a call with them. Below you will find that call, as well as a transcript of that call and
-                    a biography of them.
+                <p class="w-3/4 font-bold text-lg p-4" data-sy-reveal="lines">
+                    Liz is a care coordinator with T4T, she has been working in healthcare for many years as she studied pre-med and worked at a biomedical company.
                 </p>
-
-                <div class="flex w-full flex-col gap-4 content-center place-content-center ">
-                    <div class="skeleton h-120 w-full  rounded-3xl anattempt"></div>
-                    <div class="skeleton h-4 w-28 anattempt"></div>
-                    <div class="skeleton h-4 w-full anattempt"></div>
-                    <div class="skeleton h-4 w-full anattempt"></div>
-                    <p class="w-full font-thin text-sm px-4 text-center">
-                        These will <span class="line-through">never</span> load, it's just a placeholder
-                    </p>
-                </div>
+                <p>
+                    Additionally, she has much experience with the trans healthcare process, having worked with T4T for 2.5 years.
+                    She’s seen firsthand the challenges that trans people face when attempting to get healthcare,
+                    and have chosen to do work with t4tcaregiving in order to help them. She helps trans people in person after surgeries,
+                    when they may need extra help. She has kindly allowed us to interview her for our project.
+                    Her expertise and in-person experience should provide a better perspective to understand the issues that trans people face.
+                </p>
+                <p class="py-4">
+                    T4t caregiving<InLine Citation={citations[0]} /> is a service to help trans people who have undergone a surgery.
+                    They are stay at home caregivers who help trans people who need someone to do some basic tasks after a surgery.
+                    They help people by doing anything that the person could not do on their own.
+                    Things like driving and remembering to take their meds can be hard for someone who just went through a surgery,
+                    and likely is on pain medication. T4T helps with all that stuff so that person can just focus on recovering.
+                    It’s a group made up entirely of trans people in an attempt to provide adequate care to trans people.
+                    A large reason for their group having been created is the inadequate care for trans people.
+                    T4t caregiving is a group organized to immediately address an issue which was observed.
+                </p>
                 <div class="flex flex-col py-4 w-full items-center">
                     <span class="w-3/4 h-1 bg-black/50 rounded-2xl" />
                 </div>
                 <div class="flex flex-col gap-4 content-center place-content-center py-8">
                     <h1 class="text-xl font-bold ">
-                        An introduction:
+                        Biography:
                     </h1>
                     <p class="px-8">
-                        ___ is a ___, they have been working in trans healthcare for ___ years and have much experience with the trans healthcare process.
-                        They’ve seen the challenges that trans people face when attempting to get healthcare, and have chosen to do ___ in order to help them.
+                        Elizabeth Narvaez worked for a biomedical engineering company prior to working for T4T, making synthesizers.
+                        Upon realizing that she didn’t like the 9 to 5 structure of work, she quit. She says that it didn’t work with who she is as a person,
+                        and that it wasn’t good for her. During her break, she did some volunteering and eventually found out about T4T.
+                        Having had some caregiving experience in the past, she emailed T4T and tried out.
+                        She has been working at T4T for the last two and a half years. She really enjoys the work, it’s a much better fit for her life.
                     </p>
-                    <h1 class="text-xl font-bold">
-                        Bio:
-                    </h1>
-                    <p class="px-8">
-                        Born in ____, they began to ___ at ____. In ____ they began to work in trans medicine, and have continued until today. (other details)
-                    </p>
+                    <div class="flex flex-col gap-4 w-7/8 self-center rounded-2xl bg-yellow-200/50 border-2 pb-4">
+                        <h1 class="text-xl font-bold pt-4">
+                            The Interview:
+                        </h1>
+                        <div class="collapse collapse-arrow bg-white/25 bg-base-100 border-base-300 border w-7/8 self-center">
+                            <input type="checkbox" />
+                            <div class="collapse-title font-semibold">How did you get into the healthcare industry?</div>
+                            <div class="collapse-content text-sm">
+                                <p class="px-8">
+                                    In the interview, we asked about her experiences as a caregiver,
+                                    as well as the challenges that many trans people face when they attempt to get this sort of care.
+                                    To begin with, she described how it is common for trans people to not have good connections with their parents.
+                                    This is part of what creates the need for T4t, as there are many trans people who do not have a great support network to pull on for things like surgeries.
+                                    They need help with things like “cooking… cleaning… driving…” After a surgery, it’s common that someone may be required to take many different meds as well,
+                                    which T4T helps with. The antibiotics that are common make it hard to think, and T4T will help with anyone that is struggling.
+                                    Additionally, it’s helpful to simply have a companion for the recovery period. The largest barrier to this care is cost.
+                                    Insurance companies don’t tend to consider much trans healthcare to be needed, so they may refuse to cover it.
+                                    Liz also says that sometimes the insurance companies will sometimes “cover a procedure, but then there's a lot of other little things that they don't cover.”
+                                    Despite the progress that has been made on getting insurance companies to cover trans healthcare,
+                                    there are still many ways in which they do not cover the actual care required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="collapse collapse-arrow bg-white/25 bg-base-100 border-base-300 border w-7/8 self-center">
+                            <input type="checkbox" />
+                            <div class="collapse-title font-semibold">How can we help?</div>
+                            <div class="collapse-content text-sm">
+                                <p class="px-8">
+                                    An issue like this may seem huge,
+                                    but Liz says there are some easy ways to support the trans people in your life.
+                                    She says the easiest thing to do is just to be there to support the people in your life that are going through these issues.
+                                    Trans people often do not have the same support systems that many cis people do, so it’s important to support them.
+                                    The next thing that you can do is to be active in local politics.
+                                    Voting in local elections for representatives or school boards can help a lot.
+                                    Additionally, Liz tells us that we don’t always need to be focused on the big things,
+                                    sometimes the best thing to do is work on the “small things”. Focusing on the big things can be overwhelming,
+                                    and sometimes the big things are changing so far(like right now) that it’s nearly impossible to keep up with them.
+                                    For instance, just recently the U.S. government claimed it wanted to “find and kill” all trans people.
+                                    Large issues like the transphobia rampant within the government are not something that everyone is capable of fixing.
+                                    Thus, it makes more sense to focus on the individuals who are suffering from the issues caused by that, rather than the people causing the issues.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="collapse collapse-arrow bg-white/25 bg-base-100 border-base-300 border w-7/8 self-center">
+                            <input type="checkbox" />
+                            <div class="collapse-title font-semibold">What's the best case scenario?</div>
+                            <div class="collapse-content text-sm">
+                                <p class="px-8">
+                                    Liz’s belief is that in a perfect world, all people would have bodily autonomy completely.
+                                    Including but not limited to the right to transition, with information free and open to all.
+                                    There wouldn’t be a lot of bottlenecks to getting something medically that someone wants,
+                                    and everyone would trust people to make their own choices. Additionally, there would be more anti-discrimination
+                                    legislation making it illegal for people to discriminate against trans people.
+                                    This would include the bathroom bills that are being passed in some states, and more resources available for people seeking support.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="collapse collapse-arrow bg-white/25 bg-base-100 border-base-300 border w-7/8 self-center">
+                            <input type="checkbox" />
+                            <div class="collapse-title font-semibold">Where are further resources?</div>
+                            <div class="collapse-content text-sm">
+                                <p class="px-8">
+                                    Finally, we discussed the further resources available to people wishing to know more about this sort of issue.
+                                    Oftentimes, as Liz says, it is “easy to link people a facts-based website.” And as important as those are,
+                                    Liz wished to highlight something else for further resources: reading a book by a trans person.
+                                    Their first hand experience can be very insightful and may do more to change someone’s mind than a fact sheet on the website.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 w-7/8 self-center rounded-2xl bg-blue-200/50 border-2">
+                        <h1 class="text-xl font-bold pt-4">
+                            Reflection:
+                        </h1>
+                        <p class="px-8">
+                            A reflection on this interview would be incomplete without a discussion of the current state of the world,
+                            and the difficulty we faced when trying to get an interview with someone to speak about this topic.
+                            I think it is telling that only one person of the 10+ that we emailed was even willing to speak with us about this
+                            topic(granted that most of them did not reply at all, and thus we don’t know what their thoughts were).
+                            Even Liz, who was gracious in allowing us to interview her and had much insight into the lives and challenges of trans people within the United States,
+                            was uncomfortable with the recording of our conversation being hosted on this site. The state of the country right now is one where it is
+                            often dangerous even to have your face public as a trans person. Though we focused our conversations on the state of healthcare for trans people,
+                            it was impossible for the state of the world not to seep in. The fact that so many trans people do not have strong support networks is because of
+                            the rampant transphobia in the world, and within past generations which cuts trans people off from their parents.
+                            Health insurance companies are less likely to offer coverage to a group which is being made into a public enemy.
+                            The treatment of trans people in the media makes it less likely for people to offer to help a trans person, and the blatant and widespread
+                            misinformation about trans people does harm to any trans person attempting to get help. It’s very hard for someone not able to spend a large
+                            amount of time researching trans people to figure out which pieces of information are “gaping wounds” and which are “pickle cravings.” And any
+                            difficulty deciphering what that means is further proof. There simply isn’t a good and reliable resource for information about trans people, and
+                            certainly not one that is widespread enough to combat the misinformation.
+                        </p>
+                        <p class="px-8">
+                            Getting a boots on the ground first person perspective on the issues we’ve been discussing was very helpful to our project.
+                            Of course we expected to hear about the systemic issues that trans people faced, how doctors and healthcare providers were
+                            unprepared to help a trans patient or how health insurance decided not to cover something medically necessary.
+                            We did not expect to learn the interpersonal issues that arise from this. That a lot of this stems back to trans people
+                            being effectively cut off from the rest of society or from the people that they’re meant to be closest to. I think we both
+                            expected for the solution to be some wide sweeping change that affected most if not all doctors, we didn’t expect to hear an
+                            answer that seemed so personal. It wasn’t a wide, sweeping change, it was simply helping out the people around you, and knowing
+                            that the sweeping change would come from that. Of course that wasn’t to say you couldn’t protest the treatment of trans people,
+                            just that sometimes it's okay to not deal with the huge things, and instead decide to focus on the stuff close to home.
+                        </p>
+                        <p class="px-8">
+                            If we could do the interview over again, we’d probably simply do it earlier. We did it towards the end of the project
+                            and it meant that we needed to do this whole section while also working on finals and AP tests. Of the actual substance
+                            of the interview, we would have prepared a bit better as the interview was a bit stiff on our part(Liz was great).
+                            Perhaps simply having scheduled it sooner and prepared a bit more for the interview we would have gotten different or more information,
+                            but the information that we have currently is more than enough.
+                        </p>
+                        <p class="px-8 pb-4">
+                            To end this, I’d like to thank Liz for allowing us to interview her. You were an amazing source of information and
+                            answered all of our questions with enthusiasm and energy that was inspiring. Thank you for all the information, and
+                            for all the work you do to help the trans people being affected by the way things are right now.
+                        </p>
+                    </div>
                 </div>
 
 
