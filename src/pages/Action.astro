@@ -3,6 +3,7 @@
 import Layout from "../Layout/Layout.astro";
 import before from "../assets/Before.jpg";
 import after from "../assets/After.jpg";
+import solution from "../assets/IMG_0240.jpg";
 import Image from "astro/components/Image.astro";
 const citations = [
     {
@@ -234,7 +235,9 @@ const citations = [
                             </h1>
                             <span class="w-1/8 h-1 bg-black/50 rounded-2xl self-center" />
                         </div>
+                        <Image src={solution} alt="solution image" class="object-contain self-center w-150 h-150" />
                         <p class="w-7/8 self-center">
+                            
                             Our solution that we prototyped was creating more required classes for doctors and healthcare providers that specifically
                             educated them on caring for trans patients. Many trans people struggle to find healthcare environments that can properly
                             care for them and that they can feel safe because people are unaware of how to treat them right. This is also why a big part
